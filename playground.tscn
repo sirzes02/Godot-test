@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wgf5stsrwi40"]
 
-[ext_resource type="PackedScene" uid="uid://b4sse476kdci4" path="res://Player/player.tscn" id="1_rupst"]
-[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://Tile Maps/grass-01.tscn" id="2_wt17y"]
+[ext_resource type="PackedScene" uid="uid://b4sse476kdci4" path="res://player/player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tileMaps/grass-01.tscn" id="2_wt17y"]
 
 [node name="Playground" type="Node2D" unique_id=581921911]
 

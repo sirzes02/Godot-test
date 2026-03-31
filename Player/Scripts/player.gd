@@ -7,6 +7,8 @@ var direction: Vector2 = Vector2.ZERO
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
+signal direction_changed(new_direction: Vector2)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	state_machine.initialize(self)
@@ -15,9 +17,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	# direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	# direction = direction.normalized()
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down"),
@@ -43,6 +42,7 @@ func setDirection() -> bool:
 		return false
 		
 	cardinal_direction = new_dir
+	direction_changed.emit(new_dir)
 	sprite_2d.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 
 	return true

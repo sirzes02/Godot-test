@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://drmud5eumqqop" path="res://props/plants/plant.gd" id="1_nxykt"]
 [ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://generalNodes/hitBox/hit_box.tscn" id="2_siw38"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g5lq"]
+size = Vector2(28, 31)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxykt"]
 size = Vector2(24, 16)
 
@@ -20,8 +23,9 @@ vframes = 3
 position = Vector2(0, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=367995962]
-position = Vector2(0, 9)
-shape = SubResource("RectangleShape2D_nxykt")
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_5g5lq")
+debug_color = Color(0.70346993, 0.48933607, 0.084696256, 0.41960785)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=485221265]
 position = Vector2(0, -9)

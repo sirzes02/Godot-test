@@ -1,7 +1,7 @@
 class_name EnemyState extends State
 
 var enemy: Enemy
-var state_machine: EnemyStateMachine
+var enemy_state_machine: EnemyStateMachine
 
 func init() -> void:
 	pass

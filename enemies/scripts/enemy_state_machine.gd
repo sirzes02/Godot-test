@@ -25,7 +25,7 @@ func initialize(_enemy: Enemy) -> void:
 	
 	for state in states:
 		state.enemy = _enemy
-		state.state_machine = self
+		state.enemy_state_machine = self
 		state.init()
 		
 	if states.size() > 0:

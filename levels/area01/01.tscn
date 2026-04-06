@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://enemies/slime/slime.tscn" id="5_dh2nq"]
 [ext_resource type="PackedScene" uid="uid://dl5vcyjj1xbno" path="res://items/item_pickup/item_pickup.tscn" id="6_bklj5"]
 [ext_resource type="Resource" uid="uid://8qgcg0rmriho" path="res://items/gem.tres" id="7_s4jhe"]
-[ext_resource type="Resource" uid="uid://b1y2o87cmew1w" path="res://items/potion.tres" id="8_skxhh"]
-[ext_resource type="Resource" uid="uid://d0qvih0usgnvp" path="res://items/stone.tres" id="9_sjo14"]
-[ext_resource type="Resource" uid="uid://dsjot8ebsf5se" path="res://items/apple.tres" id="10_sjo14"]
+[ext_resource type="Resource" uid="uid://dsjot8ebsf5se" path="res://items/apple.tres" id="9_sjo14"]
+[ext_resource type="Resource" uid="uid://b1y2o87cmew1w" path="res://items/potion.tres" id="9_skxhh"]
+[ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/TreasureChest/treasure_chest.tscn" id="11_6ub2s"]
 
 [node name="01" type="Node2D" unique_id=188804400]
 script = ExtResource("1_l2ak3")
@@ -35,17 +35,19 @@ side = 1
 position = Vector2(83, 89)
 
 [node name="ItemPickup" parent="." unique_id=1695452781 instance=ExtResource("6_bklj5")]
-position = Vector2(225, 143)
+position = Vector2(227.49445, 128.85219)
 item_data = ExtResource("7_s4jhe")
 
-[node name="ItemPickup2" parent="." unique_id=1218899278 instance=ExtResource("6_bklj5")]
-position = Vector2(158, 188)
-item_data = ExtResource("8_skxhh")
-
-[node name="ItemPickup3" parent="." unique_id=1368312473 instance=ExtResource("6_bklj5")]
-position = Vector2(297, 111)
+[node name="TreasureChest" parent="." unique_id=1078578518 instance=ExtResource("11_6ub2s")]
+position = Vector2(223, 70)
 item_data = ExtResource("9_sjo14")
+quantity = 2
 
-[node name="ItemPickup4" parent="." unique_id=158628049 instance=ExtResource("6_bklj5")]
-position = Vector2(297, 189)
-item_data = ExtResource("10_sjo14")
+[node name="TreasureChest2" parent="." unique_id=1461181522 instance=ExtResource("11_6ub2s")]
+position = Vector2(283, 67)
+item_data = ExtResource("7_s4jhe")
+quantity = 4
+
+[node name="TreasureChest3" parent="." unique_id=2020584286 instance=ExtResource("11_6ub2s")]
+position = Vector2(163, 68)
+item_data = ExtResource("9_skxhh")

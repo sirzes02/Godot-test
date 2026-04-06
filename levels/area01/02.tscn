@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn.tscn" id="3_qsp5h"]
 [ext_resource type="PackedScene" uid="uid://dnk2jpthv6755" path="res://props/plants/plant.tscn" id="4_qsp5h"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="5_wvwyy"]
+[ext_resource type="PackedScene" uid="uid://dgwbjiph282" path="res://enemies/goblin/goblin.tscn" id="6_wvwyy"]
 
 [node name="01" type="Node2D" unique_id=188804400]
 script = ExtResource("1_onu17")
@@ -31,3 +32,6 @@ position = Vector2(98, 114)
 position = Vector2(256, -32)
 level = "uid://i0eupp3rpy7u"
 side = 2
+
+[node name="Slime" parent="." unique_id=2128325190 instance=ExtResource("6_wvwyy")]
+position = Vector2(237, 174)

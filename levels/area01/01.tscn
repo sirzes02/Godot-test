@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://8qgcg0rmriho" path="res://items/gem.tres" id="7_s4jhe"]
 [ext_resource type="Resource" uid="uid://dsjot8ebsf5se" path="res://items/apple.tres" id="9_sjo14"]
 [ext_resource type="Resource" uid="uid://b1y2o87cmew1w" path="res://items/potion.tres" id="9_skxhh"]
-[ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/TreasureChest/treasure_chest.tscn" id="11_6ub2s"]
+[ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/treasure_chest/treasure_chest.tscn" id="11_6ub2s"]
 
 [node name="01" type="Node2D" unique_id=188804400]
 script = ExtResource("1_l2ak3")

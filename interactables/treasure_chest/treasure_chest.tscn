@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dfsdlruxpe7ms"]
 
-[ext_resource type="Script" uid="uid://b6cnokbs2ntv5" path="res://interactables/TreasureChest/treasure_chest.gd" id="1_hftu0"]
-[ext_resource type="Texture2D" uid="uid://kkjd10x5kebp" path="res://interactables/TreasureChest/treasure-chest.png" id="2_32ws2"]
+[ext_resource type="Script" uid="uid://b6cnokbs2ntv5" path="res://interactables/treasure_chest/treasure_chest.gd" id="1_hftu0"]
+[ext_resource type="Texture2D" uid="uid://kkjd10x5kebp" path="res://interactables/treasure_chest/treasure-chest.png" id="2_32ws2"]
 [ext_resource type="Texture2D" uid="uid://xv7vbfodkwkx" path="res://items/sprites/items.png" id="3_tx8hp"]
-[ext_resource type="AudioStream" uid="uid://d27ahwr066hu1" path="res://interactables/TreasureChest/treasure-open.wav" id="4_8lpof"]
+[ext_resource type="AudioStream" uid="uid://d27ahwr066hu1" path="res://interactables/treasure_chest/treasure-open.wav" id="4_8lpof"]
 [ext_resource type="PackedScene" uid="uid://bt7u543fsor16" path="res://generalNodes/persistent_data_handler/persistent_data_handler.tscn" id="5_nkcuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lpof"]

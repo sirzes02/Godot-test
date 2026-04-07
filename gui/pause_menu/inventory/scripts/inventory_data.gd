@@ -76,3 +76,13 @@ func item_from_save(save_object: Dictionary) -> SlotData:
 	new_slot.item_data = load(save_object.item)
 	new_slot.quantity = int(save_object.quantity)
 	return new_slot
+
+func use_item(item: ItemData, count: int = 1) -> bool:
+	for slot in slots:
+		if slot and slot.item_data == item and slot.quantity >= count:
+			slot.quantity -= count
+			
+			return true
+	
+	return false
+			

@@ -60,7 +60,7 @@ func physics(_delta: float) -> State:
 func _on_player_enter() -> State:
 	_can_see_player = true
 	
-	if enemy_state_machine.current_state is EnemyStateStun:
+	if enemy_state_machine.current_state is EnemyStateStun or enemy_state_machine.current_state is EnemyStateDestroy:
 		return
 	
 	enemy_state_machine.changeState(self)

@@ -843,6 +843,7 @@ drops = Array[ExtResource("13_klbxu")]([SubResource("Resource_im24l"), SubResour
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1201196719]
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="DestroyEffectSprite" type="Sprite2D" parent="." unique_id=131214709]
 visible = false

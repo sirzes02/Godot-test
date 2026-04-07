@@ -810,6 +810,7 @@ next_state = NodePath("../Idle")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1201196719]
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="DestroyEffectSprite" type="Sprite2D" parent="." unique_id=131214709]
 visible = false
@@ -821,6 +822,7 @@ hframes = 6
 libraries/ = SubResource("AnimationLibrary_klbxu")
 
 [node name="VisionArea" parent="." unique_id=1188195177 instance=ExtResource("17_2fgol")]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" unique_id=1557791492]
 position = Vector2(0, -7)

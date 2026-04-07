@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxnk0skf7sv00" path="res://player/sprites/boomerang.png" id="2_sheky"]
 [ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://generalNodes/hurt_box/hurt_box.tscn" id="3_c7gwn"]
 [ext_resource type="AudioStream" uid="uid://odkwxxxkcb4x" path="res://player/audio/boomerang.wav" id="4_al46a"]
+[ext_resource type="PackedScene" uid="uid://diarrp6r5gy8o" path="res://generalNodes/item_magnet/item_magnet.tscn" id="6_n77qs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sheky"]
 radius = 13.0
@@ -51,6 +52,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7gwn"]
 radius = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n77qs"]
+radius = 15.0
+
 [node name="Boomerang" type="Node2D" unique_id=1804538497]
 script = ExtResource("1_cd8sf")
 catch_audio = ExtResource("2_ko17o")
@@ -82,3 +86,11 @@ debug_color = Color(0.70196074, 0, 0.052810602, 0.41960785)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1950172713]
 stream = ExtResource("4_al46a")
 autoplay = true
+
+[node name="ItemMagnet" parent="." unique_id=2146207959 instance=ExtResource("6_n77qs")]
+magnet_strength = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet" unique_id=304025160]
+position = Vector2(0, -17)
+shape = SubResource("CircleShape2D_n77qs")
+debug_color = Color(0.7019608, 0, 0.65882355, 0.07450981)

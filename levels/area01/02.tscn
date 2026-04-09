@@ -54,7 +54,6 @@ npc_resource = ExtResource("9_bemct")
 [node name="NpcBehaviorWander" parent="NPC" unique_id=1340077773 instance=ExtResource("9_kn07k")]
 
 [node name="DialogInteraction" parent="NPC" unique_id=1316307863 instance=ExtResource("11_tg8qg")]
-enabled = true
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1813205042]
 script = ExtResource("12_v3ddu")

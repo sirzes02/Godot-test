@@ -11,8 +11,11 @@
 [ext_resource type="Resource" uid="uid://cglppk3oiqxrr" path="res://npc/00_npcs/npc_01.tres" id="9_bemct"]
 [ext_resource type="PackedScene" uid="uid://k14lanhf3no4" path="res://npc/npc_behavior_wander.tscn" id="9_kn07k"]
 [ext_resource type="Resource" uid="uid://v30ayv8qjfae" path="res://npc/00_npcs/npc_02.tres" id="11_fv5f3"]
+[ext_resource type="PackedScene" uid="uid://caduja2rgl2gk" path="res://interactables/dialog/dialog_interaction.tscn" id="11_tg8qg"]
 [ext_resource type="PackedScene" uid="uid://ux2n4fapgfj2" path="res://npc/npc_behavior_patrol.tscn" id="12_dlp5d"]
+[ext_resource type="Script" uid="uid://cdkb66e1trluv" path="res://interactables/dialog/scripts/dialog_text.gd" id="12_v3ddu"]
 [ext_resource type="PackedScene" uid="uid://d31ayrd2auxyg" path="res://npc/patrol_location.tscn" id="13_5eovd"]
+[ext_resource type="Resource" uid="uid://b5s8to0h2tjdu" path="res://npc/00_npcs/hero_00.tres" id="13_v3ddu"]
 
 [node name="02" type="Node2D" unique_id=188804400]
 script = ExtResource("1_onu17")
@@ -49,6 +52,30 @@ position = Vector2(390, 54)
 npc_resource = ExtResource("9_bemct")
 
 [node name="NpcBehaviorWander" parent="NPC" unique_id=1340077773 instance=ExtResource("9_kn07k")]
+
+[node name="DialogInteraction" parent="NPC" unique_id=1316307863 instance=ExtResource("11_tg8qg")]
+enabled = true
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1813205042]
+script = ExtResource("12_v3ddu")
+text = "
+Hi! [b]Hero[/b] is that you?"
+npc_info = ExtResource("9_bemct")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction" unique_id=724158269]
+script = ExtResource("12_v3ddu")
+text = "
+[wave]Heck yeah it is me![/wave]"
+npc_info = ExtResource("13_v3ddu")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogText3" type="Node" parent="NPC/DialogInteraction" unique_id=560635952]
+script = ExtResource("12_v3ddu")
+text = "Nice bro!
+Happy to have a hero!"
+npc_info = ExtResource("9_bemct")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
 
 [node name="NPC2" parent="." unique_id=1435009824 instance=ExtResource("8_q55yv")]
 position = Vector2(394, 231)

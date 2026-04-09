@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://cglppk3oiqxrr" path="res://npc/00_npcs/npc_01.tres" id="9_bemct"]
 [ext_resource type="PackedScene" uid="uid://k14lanhf3no4" path="res://npc/npc_behavior_wander.tscn" id="9_kn07k"]
 [ext_resource type="Resource" uid="uid://v30ayv8qjfae" path="res://npc/00_npcs/npc_02.tres" id="11_fv5f3"]
+[ext_resource type="PackedScene" uid="uid://ux2n4fapgfj2" path="res://npc/npc_behavior_patrol.tscn" id="12_dlp5d"]
+[ext_resource type="PackedScene" uid="uid://d31ayrd2auxyg" path="res://npc/patrol_location.tscn" id="13_5eovd"]
 
 [node name="02" type="Node2D" unique_id=188804400]
 script = ExtResource("1_onu17")
@@ -51,3 +53,23 @@ npc_resource = ExtResource("9_bemct")
 [node name="NPC2" parent="." unique_id=1435009824 instance=ExtResource("8_q55yv")]
 position = Vector2(394, 231)
 npc_resource = ExtResource("11_fv5f3")
+
+[node name="NpcBehaviorPatrol" parent="NPC2" unique_id=1776759254 instance=ExtResource("12_dlp5d")]
+
+[node name="PatrolLocation" parent="NPC2/NpcBehaviorPatrol" unique_id=1843531490 instance=ExtResource("13_5eovd")]
+modulate = Color(1, 0, 0, 1)
+
+[node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" unique_id=322144994 instance=ExtResource("13_5eovd")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-67, -61)
+wait_time = 1.0
+
+[node name="PatrolLocation2" parent="NPC2/NpcBehaviorPatrol" unique_id=124462303 instance=ExtResource("13_5eovd")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(8, -112)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="NPC2/NpcBehaviorPatrol" unique_id=374336814 instance=ExtResource("13_5eovd")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(58, -56)
+wait_time = 1.0

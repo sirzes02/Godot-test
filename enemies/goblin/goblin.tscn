@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dgwbjiph282"]
 
 [ext_resource type="Script" uid="uid://d3hrwgkdyaam2" path="res://enemies/scripts/enemy.gd" id="1_dlfx7"]
-[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://generalNodes/hurt_box/hurt_box.tscn" id="2_dpsbx"]
-[ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://generalNodes/hit_box/hit_box.tscn" id="3_v0dw8"]
+[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://general_nodes/hurt_box/hurt_box.tscn" id="2_dpsbx"]
+[ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://general_nodes/hit_box/hit_box.tscn" id="3_v0dw8"]
 [ext_resource type="Texture2D" uid="uid://b8bduxd7punv5" path="res://player/sprites/Shadow.png" id="4_65qj1"]
 [ext_resource type="Texture2D" uid="uid://djofci7i2ecbn" path="res://enemies/goblin/goblin.png" id="5_a1dmc"]
 [ext_resource type="AudioStream" uid="uid://6ykcnlbqpeqo" path="res://enemies/slime/hit_01.wav" id="6_yl8ja"]

@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://b1hc2l6omy8e1" path="res://player/scripts/abilities/boomerang.gd" id="1_cd8sf"]
 [ext_resource type="AudioStream" uid="uid://c7ibkumu6fjk4" path="res://player/audio/catch.wav" id="2_ko17o"]
 [ext_resource type="Texture2D" uid="uid://cxnk0skf7sv00" path="res://player/sprites/boomerang.png" id="2_sheky"]
-[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://generalNodes/hurt_box/hurt_box.tscn" id="3_c7gwn"]
+[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://general_nodes/hurt_box/hurt_box.tscn" id="3_c7gwn"]
 [ext_resource type="AudioStream" uid="uid://odkwxxxkcb4x" path="res://player/audio/boomerang.wav" id="4_al46a"]
-[ext_resource type="PackedScene" uid="uid://diarrp6r5gy8o" path="res://generalNodes/item_magnet/item_magnet.tscn" id="6_n77qs"]
+[ext_resource type="PackedScene" uid="uid://diarrp6r5gy8o" path="res://general_nodes/item_magnet/item_magnet.tscn" id="6_n77qs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sheky"]
 radius = 13.0

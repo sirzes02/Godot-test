@@ -11,13 +11,13 @@
 [ext_resource type="AudioStream" uid="uid://ch08vlqyq446d" path="res://player/audio/SwordSwoosh.wav" id="8_od3ui"]
 [ext_resource type="Script" uid="uid://dbbntuyxkjufa" path="res://player/scripts/states/player_state_attack.gd" id="9_tqiix"]
 [ext_resource type="Script" uid="uid://cp4bbgqpbks3k" path="res://player/scripts/player_interations_host.gd" id="10_2ieo8"]
-[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://generalNodes/hurt_box/hurt_box.tscn" id="10_8t03j"]
+[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://general_nodes/hurt_box/hurt_box.tscn" id="10_8t03j"]
 [ext_resource type="Script" uid="uid://dtncjtjw182pm" path="res://player/scripts/player_camera.gd" id="11_ebec5"]
-[ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://generalNodes/hit_box/hit_box.tscn" id="13_yllr7"]
+[ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://general_nodes/hit_box/hit_box.tscn" id="13_yllr7"]
 [ext_resource type="Script" uid="uid://pocmmd1m5ww7" path="res://player/scripts/push_area.gd" id="14_32hag"]
 [ext_resource type="AudioStream" uid="uid://ycss18xxpr17" path="res://player/audio/hit_player.wav" id="14_kb6p2"]
 [ext_resource type="Script" uid="uid://cyqbru5cl4rvd" path="res://player/scripts/abilities/abilities.gd" id="17_tqiix"]
-[ext_resource type="PackedScene" uid="uid://diarrp6r5gy8o" path="res://generalNodes/item_magnet/item_magnet.tscn" id="18_e7oew"]
+[ext_resource type="PackedScene" uid="uid://diarrp6r5gy8o" path="res://general_nodes/item_magnet/item_magnet.tscn" id="18_e7oew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 

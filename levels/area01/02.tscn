@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://77dx84ir7nlj"]
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/scripts/level.gd" id="1_onu17"]
-[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tileMaps/grass-01.tscn" id="2_8v06e"]
+[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tile_maps/grass-01.tscn" id="2_8v06e"]
 [ext_resource type="AudioStream" uid="uid://tc71plvobpu2" path="res://levels/music/example_music_01.ogg" id="2_muqml"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn.tscn" id="3_qsp5h"]
 [ext_resource type="PackedScene" uid="uid://dnk2jpthv6755" path="res://props/plants/plant.tscn" id="4_qsp5h"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/scripts/level.gd" id="1_e5xea"]
 [ext_resource type="AudioStream" uid="uid://dbof075x47wc6" path="res://levels/music/example_music_03.ogg" id="2_ahs2m"]
-[ext_resource type="PackedScene" uid="uid://cti8vyempjt68" path="res://tileMaps/dungeon-01.tscn" id="2_nxrri"]
+[ext_resource type="PackedScene" uid="uid://cti8vyempjt68" path="res://tile_maps/dungeon-01.tscn" id="2_nxrri"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn.tscn" id="3_h0vwn"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="4_nxrri"]
 [ext_resource type="PackedScene" uid="uid://c04y20xn0hr4k" path="res://interactables/dungeon/pressure_plate.tscn" id="5_h0vwn"]

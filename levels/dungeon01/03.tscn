@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://mr3rxbbm4rwe"]
 
-[ext_resource type="PackedScene" uid="uid://cti8vyempjt68" path="res://tileMaps/dungeon-01.tscn" id="1_8ko30"]
+[ext_resource type="PackedScene" uid="uid://cti8vyempjt68" path="res://tile_maps/dungeon-01.tscn" id="1_8ko30"]
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/scripts/level.gd" id="1_eovde"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn.tscn" id="3_hbgjt"]
 [ext_resource type="AudioStream" uid="uid://dbof075x47wc6" path="res://levels/music/example_music_03.ogg" id="3_rm2aa"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="4_hbgjt"]
-[ext_resource type="PackedScene" uid="uid://ddrlslwwuytl0" path="res://generalNodes/enemy_counter/enemy_counter.tscn" id="5_10040"]
+[ext_resource type="PackedScene" uid="uid://ddrlslwwuytl0" path="res://general_nodes/enemy_counter/enemy_counter.tscn" id="5_10040"]
 [ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://enemies/slime/slime.tscn" id="6_ewpbt"]
-[ext_resource type="PackedScene" uid="uid://cuxuy3x4p4r8e" path="res://generalNodes/item_dropper/item_dropper.tscn" id="7_77qfo"]
+[ext_resource type="PackedScene" uid="uid://cuxuy3x4p4r8e" path="res://general_nodes/item_dropper/item_dropper.tscn" id="7_77qfo"]
 [ext_resource type="Resource" uid="uid://drbmxi5qakx1o" path="res://items/key_dungeon.tres" id="8_rm2aa"]
 
 [node name="03" type="Node2D" unique_id=1144143668]

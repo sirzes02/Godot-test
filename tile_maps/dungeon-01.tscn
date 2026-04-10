@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cti8vyempjt68"]
 
-[ext_resource type="Script" uid="uid://b4dhnljoc1tt" path="res://tileMaps/level_tile_map.gd" id="1_25b1a"]
-[ext_resource type="Texture2D" uid="uid://bbrcrt6h6biol" path="res://tileMaps/sprites/dungeon.png" id="1_q6d1y"]
+[ext_resource type="Script" uid="uid://b4dhnljoc1tt" path="res://tile_maps/level_tile_map.gd" id="1_25b1a"]
+[ext_resource type="Texture2D" uid="uid://bbrcrt6h6biol" path="res://tile_maps/sprites/dungeon.png" id="1_q6d1y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nipjn"]
 texture = ExtResource("1_q6d1y")

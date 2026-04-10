@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6cnokbs2ntv5" path="res://interactables/treasure_chest/treasure_chest.gd" id="1_hftu0"]
 [ext_resource type="Texture2D" uid="uid://kkjd10x5kebp" path="res://interactables/treasure_chest/treasure-chest.png" id="2_32ws2"]
 [ext_resource type="Texture2D" uid="uid://xv7vbfodkwkx" path="res://items/sprites/items.png" id="3_tx8hp"]
+[ext_resource type="FontFile" uid="uid://dplj0nmib8k77" path="res://gui/fonts/m5x7.ttf" id="4_0epee"]
 [ext_resource type="AudioStream" uid="uid://d27ahwr066hu1" path="res://interactables/treasure_chest/treasure-open.wav" id="4_8lpof"]
 [ext_resource type="PackedScene" uid="uid://bt7u543fsor16" path="res://general_nodes/persistent_data_handler/persistent_data_handler.tscn" id="5_nkcuk"]
 
@@ -216,6 +217,7 @@ offset_right = 51.0
 offset_bottom = 11.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0epee")
 theme_override_font_sizes/font_size = 10
 vertical_alignment = 1
 

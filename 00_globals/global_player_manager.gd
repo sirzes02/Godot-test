@@ -3,6 +3,7 @@ extends Node
 const PLAYER = preload("uid://b4sse476kdci4")
 const INVENTORY_DATA: InventoryData = preload("res://gui/pause_menu/inventory/player_inventory.tres")
 
+signal camera_shook(trauma: float)
 signal interact_pressed
 
 var interact_handled: bool = true
@@ -46,3 +47,6 @@ func play_audio(audio: AudioStream):
 func interact() -> void:
 	interact_handled = false
 	interact_pressed.emit()
+
+func shake_camera(trauma: float = 1) -> void:
+	camera_shook.emit(trauma)

@@ -99,3 +99,11 @@ wait_time = 1.0
 modulate = Color(0, 1, 1, 1)
 position = Vector2(58, -56)
 wait_time = 1.0
+
+[node name="DialogInteraction" parent="NPC2" unique_id=808145541 instance=ExtResource("11_tg8qg")]
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction" unique_id=2074514084]
+script = ExtResource("12_v3ddu")
+text = "Hi! How is hero?!"
+npc_info = ExtResource("11_fv5f3")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"

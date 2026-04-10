@@ -9,5 +9,5 @@ script = ExtResource("2_7c467")
 npc_name = "Nero"
 sprite = ExtResource("3_7c467")
 portrait = ExtResource("1_3liqj")
-dialog_audio_pitch = 0.5
+dialog_audio_pitch = 1.5
 metadata/_custom_type_script = "uid://c5burft102c4y"

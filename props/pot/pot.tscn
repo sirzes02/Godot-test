@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://xtl5m8vtdlsl"]
+
+[ext_resource type="Texture2D" uid="uid://boodt28ef8y4f" path="res://props/sprites/Props.png" id="1_p1qxa"]
+[ext_resource type="AudioStream" uid="uid://bp2qjg2p8ch1e" path="res://props/pot/pot_destroy.wav" id="2_48h1u"]
+[ext_resource type="PackedScene" uid="uid://4t86nwows4h5" path="res://interactables/throwable/throwable.tscn" id="3_072jo"]
+
+[sub_resource type="Gradient" id="Gradient_p1qxa"]
+offsets = PackedFloat32Array(0.21458334, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_48h1u"]
+gradient = SubResource("Gradient_p1qxa")
+width = 20
+height = 12
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Animation" id="Animation_48h1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShadowSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p1qxa"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_072jo"]
+resource_name = "destroy"
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07692308, 0.15384616, 0.23076925, 0.30769232, 0.3846154, 0.4615385),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 47]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShadowSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3846154),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_48h1u")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48h1u"]
+_data = {
+&"RESET": SubResource("Animation_48h1u"),
+&"default": SubResource("Animation_p1qxa"),
+&"destroy": SubResource("Animation_072jo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1qxa"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_072jo"]
+size = Vector2(20, 12)
+
+[node name="Pot" type="Node2D" unique_id=1497701897]
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="." unique_id=872774061]
+texture = SubResource("GradientTexture2D_48h1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852442309]
+position = Vector2(0, -9)
+texture = ExtResource("1_p1qxa")
+hframes = 16
+vframes = 3
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=931355641]
+libraries/ = SubResource("AnimationLibrary_48h1u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1735478927]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=164930081]
+shape = SubResource("RectangleShape2D_p1qxa")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=694198685]
+bus = &"SFX"
+
+[node name="Throwable" parent="." unique_id=828730129 instance=ExtResource("3_072jo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Throwable" unique_id=1641020573]
+shape = SubResource("RectangleShape2D_072jo")
+debug_color = Color(0, 1, 0.28918967, 0)

@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://b5s8to0h2tjdu" path="res://npc/00_npcs/hero_00.tres" id="13_v3ddu"]
 [ext_resource type="Script" uid="uid://dxh704n11u36o" path="res://interactables/dialog/scripts/dialog_choice.gd" id="17_723oa"]
 [ext_resource type="Script" uid="uid://dxq1ime3bskty" path="res://interactables/dialog/scripts/dialog_branch.gd" id="18_vimd4"]
+[ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="19_nr2go"]
 
 [node name="02" type="Node2D" unique_id=188804400]
 script = ExtResource("1_onu17")
@@ -145,3 +146,6 @@ script = ExtResource("12_v3ddu")
 text = "Geez! some lousy here you are..."
 npc_info = ExtResource("11_fv5f3")
 metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="Pot" parent="." unique_id=1497701897 instance=ExtResource("19_nr2go")]
+position = Vector2(71, 153)

@@ -3,12 +3,78 @@
 [ext_resource type="Texture2D" uid="uid://boodt28ef8y4f" path="res://props/sprites/Props.png" id="1_8v2mq"]
 [ext_resource type="Script" uid="uid://drmud5eumqqop" path="res://props/plants/plant.gd" id="1_nxykt"]
 [ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://general_nodes/hit_box/hit_box.tscn" id="2_siw38"]
+[ext_resource type="PackedScene" uid="uid://4t86nwows4h5" path="res://interactables/throwable/throwable.tscn" id="4_5g5lq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g5lq"]
 size = Vector2(28, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxykt"]
 size = Vector2(24, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p5bg"]
+size = Vector2(28, 20)
+
+[sub_resource type="Animation" id="Animation_3p5bg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Throwable/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5g5lq"]
+resource_name = "destroy"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Throwable/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3p5bg"]
+_data = {
+&"RESET": SubResource("Animation_3p5bg"),
+&"destroy": SubResource("Animation_5g5lq")
+}
 
 [node name="Plant" type="Node2D" unique_id=1600500991]
 script = ExtResource("1_nxykt")
@@ -35,3 +101,11 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=960046757]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_nxykt")
+
+[node name="Throwable" parent="." unique_id=828730129 instance=ExtResource("4_5g5lq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Throwable" unique_id=3918380]
+shape = SubResource("RectangleShape2D_3p5bg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1703247833]
+libraries/ = SubResource("AnimationLibrary_3p5bg")

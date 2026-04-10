@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dnk2jpthv6755" path="res://props/plants/plant.tscn" id="4_qkywd"]
 [ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://enemies/slime/slime.tscn" id="5_wxpvt"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="6_14wln"]
+[ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="8_evdtv"]
 
 [node name="03" type="Node2D" unique_id=188804400]
 script = ExtResource("1_u1an8")
@@ -50,3 +51,18 @@ position = Vector2(274, 58)
 level = "uid://dol1vmu5qfsat"
 center_player = true
 side = 2
+
+[node name="Pot3" parent="." unique_id=1497701897 instance=ExtResource("8_evdtv")]
+position = Vector2(39, 209)
+
+[node name="Pot2" parent="." unique_id=898968352 instance=ExtResource("8_evdtv")]
+position = Vector2(64, 210)
+
+[node name="Pot" parent="." unique_id=162006642 instance=ExtResource("8_evdtv")]
+position = Vector2(52, 218)
+
+[node name="Pot4" parent="." unique_id=153742791 instance=ExtResource("8_evdtv")]
+position = Vector2(65, 223)
+
+[node name="Pot5" parent="." unique_id=1858804445 instance=ExtResource("8_evdtv")]
+position = Vector2(38, 225)

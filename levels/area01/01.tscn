@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://b1y2o87cmew1w" path="res://items/potion.tres" id="9_skxhh"]
 [ext_resource type="AudioStream" uid="uid://tc71plvobpu2" path="res://levels/music/example_music_01.ogg" id="11_01x3v"]
 [ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/treasure_chest/treasure_chest.tscn" id="11_6ub2s"]
+[ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="12_01x3v"]
 
 [node name="01" type="Node2D" unique_id=188804400]
 script = ExtResource("1_l2ak3")
@@ -37,7 +38,7 @@ side = 1
 position = Vector2(83, 89)
 
 [node name="ItemPickup" parent="." unique_id=1695452781 instance=ExtResource("6_bklj5")]
-position = Vector2(238, 141)
+position = Vector2(238, 147.15895)
 item_data = ExtResource("7_s4jhe")
 
 [node name="ItemPickup6" parent="." unique_id=1051385999 instance=ExtResource("6_bklj5")]
@@ -69,7 +70,7 @@ position = Vector2(78, 194)
 item_data = ExtResource("7_s4jhe")
 
 [node name="ItemPickup4" parent="." unique_id=943760452 instance=ExtResource("6_bklj5")]
-position = Vector2(78, 166)
+position = Vector2(78, 167.05794)
 item_data = ExtResource("7_s4jhe")
 
 [node name="ItemPickup5" parent="." unique_id=700353184 instance=ExtResource("6_bklj5")]
@@ -89,3 +90,6 @@ quantity = 4
 [node name="TreasureChest3" parent="." unique_id=2020584286 instance=ExtResource("11_6ub2s")]
 position = Vector2(163, 68)
 item_data = ExtResource("9_skxhh")
+
+[node name="Pot" parent="." unique_id=1497701897 instance=ExtResource("12_01x3v")]
+position = Vector2(459, 51)

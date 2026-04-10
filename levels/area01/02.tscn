@@ -149,3 +149,6 @@ metadata/_custom_type_script = "uid://cdkb66e1trluv"
 
 [node name="Pot" parent="." unique_id=1497701897 instance=ExtResource("19_nr2go")]
 position = Vector2(71, 153)
+
+[node name="Pot2" parent="." unique_id=1800019735 instance=ExtResource("19_nr2go")]
+position = Vector2(96, 152)

@@ -99,6 +99,7 @@ func start_dialog() -> void:
 	
 func set_dialog_text(_d: DialogText) -> void:
 	rich_text_label.text = _d.text
+	v_box_container.visible = false
 	name_label.text = _d.npc_info.npc_name
 	portrait_sprite.texture = _d.npc_info.portrait
 	portrait_sprite.audio_pitch_base = _d.npc_info.dialog_audio_pitch
@@ -121,6 +122,9 @@ func set_dialog_choice(_d: DialogChoice) -> void:
 		_new_choice.text = _d.dialog_branches[i].text
 		_new_choice.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		_new_choice.pressed.connect(_dialog_choice_selected.bind(_d.dialog_branches[i]))
+	
+	if Engine.is_editor_hint():
+		return
 	
 	await get_tree().process_frame
 	v_box_container.get_child(0).grab_focus()

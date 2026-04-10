@@ -106,7 +106,8 @@ wait_time = 1.0
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction" unique_id=2074514084]
 script = ExtResource("12_v3ddu")
-text = "Yo! Hero! Will you help retreive my magical flute from the dark dungeon?"
+text = "Yo! Hero! Will you help retreive my magical flute from the dark dungeon?
+Please, pretty please?"
 npc_info = ExtResource("11_fv5f3")
 metadata/_custom_type_script = "uid://cdkb66e1trluv"
 
@@ -117,7 +118,7 @@ metadata/_custom_type_script = "uid://dxh704n11u36o"
 
 [node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice" unique_id=1120049333]
 script = ExtResource("18_vimd4")
-text = "Count on it!"
+text = "You can count on it!"
 npc_info = ExtResource("13_v3ddu")
 metadata/_custom_type_script = "uid://dxq1ime3bskty"
 
@@ -135,7 +136,7 @@ metadata/_custom_type_script = "uid://cdkb66e1trluv"
 
 [node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice" unique_id=570061008]
 script = ExtResource("18_vimd4")
-text = "NO!"
+text = "NO! You are crazy bananas!"
 npc_info = ExtResource("13_v3ddu")
 metadata/_custom_type_script = "uid://dxq1ime3bskty"
 

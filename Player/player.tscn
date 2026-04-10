@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://diarrp6r5gy8o" path="res://general_nodes/item_magnet/item_magnet.tscn" id="18_e7oew"]
 [ext_resource type="Script" uid="uid://bbbmr83kud5fr" path="res://player/scripts/states/player_state_carry.gd" id="18_knn7v"]
 [ext_resource type="AudioStream" uid="uid://tfign5084bd4" path="res://player/audio/throw.wav" id="20_uw77l"]
+[ext_resource type="Script" uid="uid://kv4fs3advh2e" path="res://player/scripts/states/player_state_death.gd" id="21_rptt4"]
+[ext_resource type="AudioStream" uid="uid://coukidj02g5t6" path="res://player/audio/exhausted.wav" id="22_r7pn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
@@ -1038,6 +1040,23 @@ tracks/2/keys = {
 "values": [Vector2(6, -12)]
 }
 
+[sub_resource type="Animation" id="Animation_pnw6m"]
+resource_name = "death"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [74, 75, 76]
+}
+
 [sub_resource type="Animation" id="Animation_btcbx"]
 resource_name = "idle_down"
 length = 0.4
@@ -1330,6 +1349,7 @@ _data = {
 &"charge_walk_down": SubResource("Animation_bjvpn"),
 &"charge_walk_side": SubResource("Animation_g4c7l"),
 &"charge_walk_up": SubResource("Animation_s7qer"),
+&"death": SubResource("Animation_pnw6m"),
 &"idle_down": SubResource("Animation_btcbx"),
 &"idle_side": SubResource("Animation_gwnis"),
 &"idle_up": SubResource("Animation_k53q1"),
@@ -1545,6 +1565,10 @@ lift_audio = ExtResource("18_7pqkx")
 [node name="Carry" type="Node" parent="StateMachine" unique_id=1609941986]
 script = ExtResource("18_knn7v")
 throw_audio = ExtResource("20_uw77l")
+
+[node name="Death" type="Node" parent="StateMachine" unique_id=383840048]
+script = ExtResource("21_rptt4")
+exhaust_audio = ExtResource("22_r7pn3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1951948397]
 editor_draw_limits = true

@@ -8,7 +8,8 @@ var hurt_box: HurtBox
 var direction: Vector2
 var next_state: State = null
 
-@onready var idle: State_Idle = $"../Idle"
+@onready var idle: State = $"../Idle"
+@onready var death: State = $"../Death"
 
 func init() -> void:
 	player.player_damaged.connect(_player_damaged)
@@ -42,8 +43,14 @@ func handled_input(_event: InputEvent) -> State:
 
 func _player_damaged(_hurt_box: HurtBox) -> void:
 	hurt_box = _hurt_box
-	player_state_machine.changeState(self)
+	
+	if player_state_machine.current_state != death:
+		player_state_machine.changeState(self)
+	
 	pass
 	
 func _animation_finished(_a: String) -> void:
 	next_state = idle
+	
+	if player.hp <= 0:
+		next_state = death

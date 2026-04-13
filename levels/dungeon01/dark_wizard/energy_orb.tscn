@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cf7rgtbad7ku3"]
+
+[ext_resource type="Script" uid="uid://bea77ed2x0ia4" path="res://levels/dungeon01/dark_wizard/scripts/energy_orb.gd" id="1_83oka"]
+[ext_resource type="PackedScene" uid="uid://chqll71vii5yb" path="res://general_nodes/hurt_box/hurt_box.tscn" id="2_1vlmf"]
+[ext_resource type="AudioStream" uid="uid://3i8gijb1vjct" path="res://levels/dungeon01/dark_wizard/audio/boss_fireball.wav" id="2_2eqtg"]
+[ext_resource type="Material" uid="uid://byo8iurniuafj" path="res://shaders_materials/light_material.tres" id="2_sx6rt"]
+[ext_resource type="AudioStream" uid="uid://dpnvfcygb605o" path="res://levels/dungeon01/dark_wizard/audio/boss_fireball_hit.wav" id="3_ve32s"]
+
+[sub_resource type="Gradient" id="Gradient_83oka"]
+offsets = PackedFloat32Array(0.37083334, 0.8, 0.89166665, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.99215686, 0, 1, 1, 0.4862745, 0, 1, 1, 0.48235294, 0, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1vlmf"]
+gradient = SubResource("Gradient_83oka")
+width = 24
+height = 24
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vlmf"]
+radius = 11.0
+
+[node name="EnergyOrb" type="Node2D" unique_id=1559401846]
+script = ExtResource("1_83oka")
+shoot_audio = ExtResource("2_2eqtg")
+hit_audio = ExtResource("3_ve32s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=490206087]
+z_index = 1
+material = ExtResource("2_sx6rt")
+texture = SubResource("GradientTexture2D_1vlmf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=944331218]
+max_polyphony = 2
+bus = &"SFX"
+
+[node name="HurtBox" parent="." unique_id=739214514 instance=ExtResource("2_1vlmf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1173570740]
+shape = SubResource("CircleShape2D_1vlmf")
+debug_color = Color(0.9866621, 0, 0.1673299, 0)

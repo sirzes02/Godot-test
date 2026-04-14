@@ -22,6 +22,7 @@ func save_game() -> void:
 	update_player_data()
 	update_scene_path()
 	update_item_path()
+	update_quest_data()
 
 	var file := FileAccess.open(SAVE_PATH + "save.sav", FileAccess.WRITE)
 	var save_json = JSON.stringify(current_save)
@@ -47,6 +48,7 @@ func load_game() -> void:
 	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
 	PlayerManager.set_player_health(current_save.player.hp, current_save.player.max_hp)
 	PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
+	QuestManager.current_quests = current_save.quests
 	await LevelManager.level_loaded
 	
 	game_loaded.emit()
@@ -69,6 +71,9 @@ func update_scene_path() -> void:
 
 func update_item_path() -> void:
 	current_save.items = PlayerManager.INVENTORY_DATA.get_save_data()
+
+func update_quest_data() -> void:
+	current_save.quests = QuestManager.current_quests
 
 func add_persistent_value(value: String) -> void:
 	if !check_persistent_value(value):

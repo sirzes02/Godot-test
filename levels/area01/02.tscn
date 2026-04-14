@@ -47,8 +47,11 @@ position = Vector2(256, -32)
 level = "uid://i0eupp3rpy7u"
 side = 2
 
-[node name="Slime" parent="." unique_id=2128325190 instance=ExtResource("6_wvwyy")]
+[node name="Goblin" parent="." unique_id=2128325190 instance=ExtResource("6_wvwyy")]
 position = Vector2(35, 204)
+
+[node name="Goblin2" parent="." unique_id=1971995651 instance=ExtResource("6_wvwyy")]
+position = Vector2(32, 264)
 
 [node name="NPC" parent="." unique_id=278842197 instance=ExtResource("8_q55yv")]
 position = Vector2(390, 54)

@@ -1,5 +1,7 @@
 class_name EnemyStateChase extends EnemyState
 
+const PATHFINDER: PackedScene = preload("res://enemies/pathfinder.tscn")
+
 @export var anim_name: String = "chase"
 @export var chase_speed: float = 40.0
 @export var turn_rate: float = 0.25
@@ -10,6 +12,7 @@ class_name EnemyStateChase extends EnemyState
 @export var state_aggro_duration: float = 0.5
 @export var next_state: EnemyState
 
+var pathfinder: Pathfinder
 var _timer: float = 0.0
 var _direction: Vector2
 var _can_see_player: bool = false
@@ -22,6 +25,8 @@ func init() -> void:
 	pass
 
 func enter() -> void:
+	pathfinder = PATHFINDER.instantiate()
+	enemy.add_child(pathfinder)
 	_timer = state_aggro_duration
 	enemy.updateAnimation(anim_name)
 	
@@ -30,6 +35,8 @@ func enter() -> void:
 	pass
 	
 func exit() -> void:
+	pathfinder.queue_free()
+
 	if attack_area:
 		attack_area.monitoring = false
 
@@ -40,8 +47,7 @@ func process(_delta: float) -> EnemyState:
 	if PlayerManager.player.hp <= 0:
 		return next_state
 	
-	var new_direction: Vector2 = enemy.global_position.direction_to(PlayerManager.player.global_position)
-	_direction = lerp(_direction, new_direction, turn_rate)
+	_direction = lerp(_direction, pathfinder.best_path, turn_rate)
 	enemy.velocity = _direction * chase_speed
 	
 	if enemy.setDirection(_direction):

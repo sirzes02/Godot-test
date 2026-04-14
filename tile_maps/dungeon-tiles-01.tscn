@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cti8vyempjt68"]
+[gd_scene format=3 uid="uid://vfhgm3ka1xwg"]
 
-[ext_resource type="Script" uid="uid://b4dhnljoc1tt" path="res://tile_maps/level_tile_map.gd" id="1_25b1a"]
-[ext_resource type="Texture2D" uid="uid://bbrcrt6h6biol" path="res://tile_maps/sprites/dungeon.png" id="1_q6d1y"]
+[ext_resource type="Texture2D" uid="uid://bbrcrt6h6biol" path="res://tile_maps/sprites/dungeon.png" id="1_8cntb"]
+[ext_resource type="Script" uid="uid://or0f0lircotf" path="res://tile_maps/level_tile_map_layer.gd" id="2_8cntb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nipjn"]
-texture = ExtResource("1_q6d1y")
+texture = ExtResource("1_8cntb")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -244,9 +244,9 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_nipjn")
 
-[node name="Dungeon01" type="TileMap" unique_id=633893028]
+[node name="dungeon-tiles-01" type="TileMapLayer" unique_id=733675109]
 z_index = -1
+use_parent_material = true
 tile_set = SubResource("TileSet_i6lmf")
 rendering_quadrant_size = 32
-format = 2
-script = ExtResource("1_25b1a")
+script = ExtResource("2_8cntb")

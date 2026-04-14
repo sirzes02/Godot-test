@@ -17,19 +17,13 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 		
-	super()
+	super ()
 	collision_shape_2d.queue_free()
 	original_position = npc.global_position
 	
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-		
-	if abs(npc.global_position.distance_to(original_position)) > wander_range * 32:
-		npc.velocity *= -1
-		npc.direction *= -1
-		npc.update_direction(npc.global_position + npc.direction)
-		npc.update_animation() 
 
 func start() -> void:
 	# IDLE
@@ -46,6 +40,16 @@ func start() -> void:
 	# WALK
 	npc.state = "walk"
 	var _dir: Vector2 = DIRECTIONS[randi_range(0, 3)]
+	
+	if abs(npc.global_position.distance_to(original_position)) > wander_range * 32:
+		var dir_to_area: Vector2 = global_position.direction_to(original_position)
+		var best_direction: Array[float]
+		
+		for direction in DIRECTIONS:
+			best_direction.append(direction.dot(dir_to_area))
+			
+		_dir = DIRECTIONS[best_direction.find(best_direction.max())]
+	
 	npc.direction = _dir
 	npc.velocity = wander_speed * _dir
 	npc.update_direction(npc.global_position + _dir)

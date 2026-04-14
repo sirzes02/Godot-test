@@ -990,7 +990,6 @@ blend_mode = 2
 [node name="DarkWizardBoss" type="Node2D" parent="." unique_id=1900554882]
 y_sort_enabled = true
 script = ExtResource("7_if06n")
-max_hp = 3
 
 [node name="PersistentDataHandler" parent="DarkWizardBoss" unique_id=805288326 instance=ExtResource("12_4365k")]
 

@@ -19,6 +19,10 @@
 [ext_resource type="Script" uid="uid://dxh704n11u36o" path="res://interactables/dialog/scripts/dialog_choice.gd" id="17_723oa"]
 [ext_resource type="Script" uid="uid://dxq1ime3bskty" path="res://interactables/dialog/scripts/dialog_branch.gd" id="18_vimd4"]
 [ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="19_nr2go"]
+[ext_resource type="PackedScene" uid="uid://c04y20xn0hr4k" path="res://interactables/dungeon/pressure_plate.tscn" id="20_2yxo7"]
+[ext_resource type="Resource" uid="uid://bgus56vk87m0n" path="res://quests/recover_lost_flute.tres" id="21_2yxo7"]
+[ext_resource type="PackedScene" uid="uid://x7mqxn0cs75f" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="21_bn6vq"]
+[ext_resource type="Resource" uid="uid://b2rlo1r6dioao" path="res://quests/long_quest.tres" id="22_bn6vq"]
 
 [node name="02" type="Node2D" unique_id=188804400]
 script = ExtResource("1_onu17")
@@ -54,7 +58,7 @@ position = Vector2(35, 204)
 position = Vector2(32, 264)
 
 [node name="NPC" parent="." unique_id=278842197 instance=ExtResource("8_q55yv")]
-position = Vector2(390, 54)
+position = Vector2(157, 54)
 npc_resource = ExtResource("9_bemct")
 
 [node name="NpcBehaviorWander" parent="NPC" unique_id=1340077773 instance=ExtResource("9_kn07k")]
@@ -126,6 +130,12 @@ text = "You can count on it!"
 npc_info = ExtResource("13_v3ddu")
 metadata/_custom_type_script = "uid://dxq1ime3bskty"
 
+[node name="QuestAdvanceTrigger" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch" unique_id=1877760748 instance=ExtResource("21_bn6vq")]
+signal_name = "selected"
+linked_quest = ExtResource("21_2yxo7")
+quest_step = 0
+quest_complete = false
+
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch" unique_id=1153824801]
 script = ExtResource("12_v3ddu")
 text = "Thank you dear hero! You are a true specimen."
@@ -155,3 +165,30 @@ position = Vector2(71, 153)
 
 [node name="Pot2" parent="." unique_id=1800019735 instance=ExtResource("19_nr2go")]
 position = Vector2(96, 152)
+
+[node name="PressurePlate" parent="." unique_id=411520538 instance=ExtResource("20_2yxo7")]
+position = Vector2(327, 54)
+
+[node name="QuestAdvanceTrigger" parent="PressurePlate" unique_id=2098367818 instance=ExtResource("21_bn6vq")]
+signal_name = "activated"
+linked_quest = ExtResource("22_bn6vq")
+quest_step = 0
+quest_complete = false
+
+[node name="PressurePlate2" parent="." unique_id=671186963 instance=ExtResource("20_2yxo7")]
+position = Vector2(363, 54)
+
+[node name="QuestAdvanceTrigger" parent="PressurePlate2" unique_id=972945338 instance=ExtResource("21_bn6vq")]
+signal_name = "activated"
+linked_quest = ExtResource("22_bn6vq")
+quest_step = 1
+quest_complete = false
+
+[node name="PressurePlate3" parent="." unique_id=535434111 instance=ExtResource("20_2yxo7")]
+position = Vector2(399, 54)
+
+[node name="QuestAdvanceTrigger" parent="PressurePlate3" unique_id=1693189763 instance=ExtResource("21_bn6vq")]
+signal_name = "activated"
+linked_quest = ExtResource("22_bn6vq")
+quest_step = 2
+quest_complete = false

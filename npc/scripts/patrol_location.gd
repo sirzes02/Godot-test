@@ -38,5 +38,5 @@ func update_line(next_location: Vector2) -> void:
 	line_2d.points[1] = next_location - position
 
 func _update_wait_time_label() -> void:
-	if Engine.is_editor_hint():
+	if Engine.is_editor_hint() and label_2 != null:
 		label_2.text = "wait: " + str(snappedf(wait_time, 0.1)) + "s"

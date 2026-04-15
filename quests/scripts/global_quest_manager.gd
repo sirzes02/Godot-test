@@ -42,7 +42,7 @@ func update_quest(_title: String, _completed_step: String, _is_complete: bool = 
 		}
 		
 		if _completed_step != "":
-			new_quest.completed_steps.append(_completed_step)
+			new_quest.completed_steps.append(_completed_step.to_lower())
 			
 		current_quests.append(new_quest)
 		quest_updated.emit(new_quest)
@@ -52,7 +52,7 @@ func update_quest(_title: String, _completed_step: String, _is_complete: bool = 
 		var quest = current_quests[quest_index]
 		
 		if _completed_step != "" and not quest.completed_steps.has(_completed_step):
-			quest.completed_steps.append(_completed_step)
+			quest.completed_steps.append(_completed_step.to_lower())
 			pass
 		
 		if not quest.is_complete:

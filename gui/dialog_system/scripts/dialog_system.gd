@@ -134,6 +134,7 @@ func set_dialog_choice(_d: DialogChoice) -> void:
 	
 func _dialog_choice_selected(_d: DialogBranch)-> void:
 	v_box_container.visible = false
+	_d.selected.emit()
 	show_dialog(_d.dialog_items)
 	pass
 	

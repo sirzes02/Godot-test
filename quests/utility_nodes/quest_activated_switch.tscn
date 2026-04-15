@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dnete4104lbhm"]
+
+[ext_resource type="Script" uid="uid://deaywdad7s5gl" path="res://quests/utility_nodes/quest_activated_switch.gd" id="1_1a44c"]
+[ext_resource type="Texture2D" uid="uid://bcj47rjxh1rw7" path="res://quests/utility_nodes/icons/quest_switch.png" id="2_rmkwn"]
+
+[node name="QuestActivatedSwitch" type="Node2D" unique_id=1711981094]
+script = ExtResource("1_1a44c")
+settings_summary = "UPDATE QUEST:
+Quest: Long Quest
+Checking if player has quest"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=642809345]
+z_index = 10
+position = Vector2(-9, -14)
+texture = ExtResource("2_rmkwn")

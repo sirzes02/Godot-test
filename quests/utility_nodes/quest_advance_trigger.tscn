@@ -5,10 +5,8 @@
 
 [node name="QuestAdvanceTrigger" type="Node2D" unique_id=1877760748]
 script = ExtResource("1_huhb0")
-signal_name = null
-quest_step = null
-quest_complete = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=502230307]
+z_index = 10
 position = Vector2(9, -14)
 texture = ExtResource("2_32f25")

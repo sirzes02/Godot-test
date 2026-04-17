@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="3_y5juy"]
 [ext_resource type="PackedScene" uid="uid://vfhgm3ka1xwg" path="res://tile_maps/dungeon-tiles-01.tscn" id="4_yrrfi"]
 [ext_resource type="PackedScene" uid="uid://c8wcg7eoiw2p7" path="res://interactables/dungeon/locked_door.tscn" id="5_sd1pa"]
+[ext_resource type="PackedScene" uid="uid://x7mqxn0cs75f" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="7_yrrfi"]
+[ext_resource type="Resource" uid="uid://bgus56vk87m0n" path="res://quests/recover_lost_flute.tres" id="8_dqalw"]
+[ext_resource type="PackedScene" uid="uid://dnete4104lbhm" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="9_ofwiq"]
 
 [node name="02" type="Node2D" unique_id=1478657494]
 script = ExtResource("1_7m5tv")
@@ -26,6 +29,24 @@ level = "uid://dol1vmu5qfsat"
 target_transition_area = "LevelTransition2"
 side = 3
 
+[node name="QuestActivatedSwitch" parent="LevelTransition" unique_id=1711981094 instance=ExtResource("9_ofwiq")]
+check_type = 2
+remove_when_activated = true
+free_on_remove = true
+linked_quest = ExtResource("8_dqalw")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Checking if player is on step: finc the cave entrance."
+
+[node name="QuestAdvanceTrigger" parent="LevelTransition/QuestActivatedSwitch" unique_id=1877760748 instance=ExtResource("7_yrrfi")]
+linked_quest = ExtResource("8_dqalw")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Step: 1 - finc the cave entrance.
+Complete: false"
+
 [node name="LevelTransition2" parent="." unique_id=31857781 instance=ExtResource("3_y5juy")]
 position = Vector2(496, 96)
 level = "uid://mr3rxbbm4rwe"
@@ -37,3 +58,5 @@ position = Vector2(256, -80)
 level = "uid://djaa2b84qk6o1"
 center_player = true
 side = 2
+
+[connection signal="entered_from_here" from="LevelTransition" to="LevelTransition/QuestActivatedSwitch/QuestAdvanceTrigger" method="advance_quest"]

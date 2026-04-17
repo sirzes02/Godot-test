@@ -39,7 +39,9 @@ position = Vector2(192, 112)
 position = Vector2(225, 54)
 
 [node name="PushableStatue" parent="." unique_id=1962127992 instance=ExtResource("7_eoaji")]
-position = Vector2(320, 112)
+position = Vector2(320, 115)
+persitent = true
+persitent_location = Vector2(191, 113)
 
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
 [connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="close_door"]

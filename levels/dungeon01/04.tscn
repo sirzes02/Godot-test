@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://crmsv4hi8ch1u" path="res://general_nodes/hit_box/hit_box.tscn" id="9_8tw0p"]
 [ext_resource type="AudioStream" uid="uid://c3ujvpnwwkco5" path="res://levels/dungeon01/dark_wizard/audio/boss_destroy.wav" id="11_you0g"]
 [ext_resource type="PackedScene" uid="uid://bt7u543fsor16" path="res://general_nodes/persistent_data_handler/persistent_data_handler.tscn" id="12_4365k"]
+[ext_resource type="PackedScene" uid="uid://cuxuy3x4p4r8e" path="res://general_nodes/item_dropper/item_dropper.tscn" id="16_7ryp7"]
+[ext_resource type="Resource" uid="uid://bot1urt4nka1v" path="res://items/magical_flute.tres" id="17_g81xo"]
+[ext_resource type="PackedScene" uid="uid://x7mqxn0cs75f" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="18_w4huj"]
+[ext_resource type="Resource" uid="uid://bgus56vk87m0n" path="res://quests/recover_lost_flute.tres" id="19_kljc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nipjn"]
 texture = ExtResource("4_88osy")
@@ -988,6 +992,7 @@ blend_mode = 2
 [node name="DarkWizardBoss" type="Node2D" parent="." unique_id=1900554882]
 y_sort_enabled = true
 script = ExtResource("7_if06n")
+max_hp = 1
 
 [node name="PersistentDataHandler" parent="DarkWizardBoss" unique_id=805288326 instance=ExtResource("12_4365k")]
 
@@ -1119,3 +1124,17 @@ texture = SubResource("GradientTexture2D_ec4sb")
 [node name="Sprite2D3" type="Sprite2D" parent="DarkWizardBoss/PositionTarget" unique_id=2106078266]
 position = Vector2(112, 126)
 texture = SubResource("GradientTexture2D_ec4sb")
+
+[node name="ItemDropper" parent="DarkWizardBoss" unique_id=1567201631 instance=ExtResource("16_7ryp7")]
+position = Vector2(304, 111)
+item_data = ExtResource("17_g81xo")
+
+[node name="QuestAdvanceTrigger" parent="DarkWizardBoss/ItemDropper" unique_id=1877760748 instance=ExtResource("18_w4huj")]
+position = Vector2(-304, -111)
+signal_name = "drop_collected"
+linked_quest = ExtResource("19_kljc5")
+quest_step = 2
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Step: 2 - find the magical flute
+Complete: false"

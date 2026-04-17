@@ -84,7 +84,7 @@ func find_quest(_quest: Quest) -> Dictionary:
 		if quest.title.to_lower() == _quest.title.to_lower():
 			return quest
 	
-	return {title = "Not Found", is_complete = false, completed_steps = ['']}
+	return {title = "not found", is_complete = false, completed_steps = ['']}
 
 func find_quest_by_title(_title: String) -> Quest:
 	for quest in quests:

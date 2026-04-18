@@ -38,7 +38,7 @@ func _ready() -> void:
 	hit_box.damaged.connect(_take_damage)
 	update_hp(99)
 	update_damage_values()
-	#  PlayerManager.player_leveled_up.connect(update_damage_values)
+	PlayerManager.player_leveled_up.connect(_on_player_level_up)
 	pass 
 
 func _process(_delta: float) -> void:
@@ -121,3 +121,8 @@ func revive_player() -> void:
 func update_damage_values() -> void:
 	attack_hurt_box.damage = attack
 	charge_spin_hurt_box.damage = attack * 2
+
+func _on_player_level_up() -> void:
+	effect_animation_player.play("level_up")
+	update_hp(99)
+	pass

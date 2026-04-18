@@ -24,6 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://x7mqxn0cs75f" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="21_bn6vq"]
 [ext_resource type="Resource" uid="uid://b2rlo1r6dioao" path="res://quests/long_quest.tres" id="22_bn6vq"]
 [ext_resource type="PackedScene" uid="uid://dnete4104lbhm" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="24_gprtj"]
+[ext_resource type="PackedScene" uid="uid://dl5vcyjj1xbno" path="res://items/item_pickup/item_pickup.tscn" id="25_ikfw6"]
+[ext_resource type="Resource" uid="uid://b2h5mk1u6vn2i" path="res://items/a_ninja_suit.tres" id="26_khk8w"]
+[ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/treasure_chest/treasure_chest.tscn" id="27_khk8w"]
+[ext_resource type="Resource" uid="uid://s8oc641vwnya" path="res://items/w_katana.tres" id="28_i8f5t"]
 
 [sub_resource type="GDScript" id="GDScript_gprtj"]
 script/source = "extends Node
@@ -127,7 +131,6 @@ wait_time = 1.0
 
 [node name="QuestActivatedSwitch" parent="NPC_NERO" unique_id=1711981094 instance=ExtResource("24_gprtj")]
 remove_when_activated = true
-free_on_remove = null
 react_to_global_signal = true
 linked_quest = ExtResource("21_2yxo7")
 settings_summary = "UPDATE QUEST:
@@ -199,7 +202,6 @@ Checking if quest is complete"
 
 [node name="QuestActivatedSwitch2" parent="NPC_NERO/QuestActivatedSwitch3" unique_id=408300498 instance=ExtResource("24_gprtj")]
 position = Vector2(0, -20)
-free_on_remove = null
 react_to_global_signal = true
 linked_quest = ExtResource("21_2yxo7")
 settings_summary = "UPDATE QUEST:
@@ -276,7 +278,6 @@ Complete: false"
 
 [node name="QuestActivatedSwitch" parent="." unique_id=1297875909 instance=ExtResource("24_gprtj")]
 position = Vector2(362, 54)
-free_on_remove = null
 react_to_global_signal = true
 linked_quest = ExtResource("22_bn6vq")
 
@@ -294,7 +295,6 @@ Complete: false"
 [node name="QuestActivatedSwitch2" parent="." unique_id=1706366424 instance=ExtResource("24_gprtj")]
 position = Vector2(399, 54)
 check_type = 2
-free_on_remove = null
 react_to_global_signal = true
 linked_quest = ExtResource("22_bn6vq")
 quest_step = 2
@@ -317,7 +317,6 @@ Complete: true"
 [node name="QuestActivatedSwitch3" parent="." unique_id=1596934320 instance=ExtResource("24_gprtj")]
 position = Vector2(454, 55)
 check_type = 3
-free_on_remove = null
 react_to_global_signal = true
 linked_quest = ExtResource("22_bn6vq")
 settings_summary = "UPDATE QUEST:
@@ -326,3 +325,11 @@ Checking if quest is complete"
 
 [node name="Pot" parent="QuestActivatedSwitch3" unique_id=851172822 instance=ExtResource("19_nr2go")]
 position = Vector2(-16, 8)
+
+[node name="ItemPickup" parent="." unique_id=1051385999 instance=ExtResource("25_ikfw6")]
+position = Vector2(16, 42)
+item_data = ExtResource("26_khk8w")
+
+[node name="TreasureChest" parent="." unique_id=1078578518 instance=ExtResource("27_khk8w")]
+position = Vector2(74, 40)
+item_data = ExtResource("28_i8f5t")

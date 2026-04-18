@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bl6oa27wad1fv"]
+
+[ext_resource type="Texture2D" uid="uid://xv7vbfodkwkx" path="res://items/sprites/items.png" id="1_vmrj7"]
+[ext_resource type="Script" uid="uid://cu3qr6qo001ma" path="res://gui/pause_menu/stats/stats.gd" id="2_p2vhb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4fh8"]
+atlas = ExtResource("1_vmrj7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rwe7i"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_u4fh8")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="Stats" type="PanelContainer" unique_id=1609854217]
+offset_right = 187.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rwe7i")
+script = ExtResource("2_p2vhb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=303176047]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1338443075]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1533342841]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.83137256, 0.49803922, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=354939406]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1142255563]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=758487191]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.83137256, 0.49803922, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "XP"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1024448595]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1993470582]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=1541134130]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.83137256, 0.49803922, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Attack"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=1985217889]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1124208855]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=1779147446]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.83137256, 0.49803922, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Defense"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=1372106789]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 2

@@ -37,6 +37,11 @@ side = 1
 [node name="Slime" parent="." unique_id=2128325190 instance=ExtResource("5_dh2nq")]
 position = Vector2(83, 89)
 
+[node name="Slime2" parent="." unique_id=1102821168 instance=ExtResource("5_dh2nq")]
+position = Vector2(383, 177)
+hp = 1
+xp_reward = 50
+
 [node name="ItemPickup" parent="." unique_id=1695452781 instance=ExtResource("6_bklj5")]
 position = Vector2(238, 147.15895)
 item_data = ExtResource("7_s4jhe")

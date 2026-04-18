@@ -8,6 +8,14 @@ var invulnerable: bool = false
 var hp: int = 6
 var max_hp: int = 6
 
+var level: int = 1
+var xp: int = 0
+var attack: int = 1:
+	set(v):
+		attack = v
+		update_damage_values()
+var defense: int = 1
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -18,20 +26,21 @@ var max_hp: int = 6
 @onready var held_item: Node2D = $Sprite2D/HeldItem
 @onready var carry: State = $StateMachine/Carry
 @onready var idle: State = $StateMachine/Idle
+@onready var attack_hurt_box: HurtBox = %AttackHurtBox
+@onready var charge_spin_hurt_box: HurtBox = %ChargeSpinHurtBox
 
 signal direction_changed(new_direction: Vector2)
 signal player_damaged(hurt_box: HurtBox)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.initialize(self)
 	hit_box.damaged.connect(_take_damage)
 	update_hp(99)
-	pass # Replace with function body.
+	update_damage_values()
+	#  PlayerManager.player_leveled_up.connect(update_damage_values)
+	pass 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
@@ -76,7 +85,12 @@ func _take_damage(hurt_box: HurtBox) -> void:
 		return
 			
 	if hp > 0:
-		update_hp(-hurt_box.damage)
+		var dmg: int = hurt_box.damage
+		
+		if dmg > 0:
+			dmg = clampi(dmg - defense, 1, dmg)
+		
+		update_hp(-dmg)
 		player_damaged.emit(hurt_box)
 	pass
 	
@@ -103,3 +117,7 @@ func pickup_item(_t: Throwable) -> void:
 func revive_player() -> void:
 	update_hp(99)
 	state_machine.changeState(idle)
+
+func update_damage_values() -> void:
+	attack_hurt_box.damage = attack
+	charge_spin_hurt_box.damage = attack * 2

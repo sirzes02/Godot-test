@@ -28,9 +28,9 @@ PlayerHud="*uid://c2qudfadoekdx"
 PlayerManager="*uid://cwvtlya7vog2f"
 SceneTransition="*uid://bu1cxxl11qpup"
 SaveManager="*uid://o625n35emdh0"
+QuestManager="*uid://ii7wfyhyt600"
 PauseMenu="*uid://fft2clkfyt2x"
 DialogSystem="*uid://dalmgct7b53js"
-QuestManager="*uid://ii7wfyhyt600"
 
 [display]
 

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ceoaksai3yr1" path="res://gui/pause_menu/inventory/inventory_slot.tscn" id="3_u4fh8"]
 [ext_resource type="Resource" uid="uid://blj4h7rnd0fmh" path="res://gui/pause_menu/inventory/player_inventory.tres" id="4_t7424"]
 [ext_resource type="PackedScene" uid="uid://bl6oa27wad1fv" path="res://gui/pause_menu/stats/stats.tscn" id="6_bpe16"]
+[ext_resource type="Texture2D" uid="uid://rn0dkbc7y265" path="res://items/sprites/gear.png" id="6_kdhhk"]
 [ext_resource type="PackedScene" uid="uid://bmrf0v2uwfppr" path="res://gui/pause_menu/quests/quest_item.tscn" id="6_nbojc"]
 [ext_resource type="Script" uid="uid://c8ohe610dcc58" path="res://gui/pause_menu/quests_ui.gd" id="6_vwsmh"]
 [ext_resource type="FontFile" uid="uid://dplj0nmib8k77" path="res://gui/fonts/m5x7.ttf" id="7_vwsmh"]
@@ -27,9 +28,36 @@ texture_margin_top = 14.0
 texture_margin_right = 14.0
 texture_margin_bottom = 14.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6k0q"]
+atlas = ExtResource("6_kdhhk")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdhhk"]
+load_path = "res://.godot/imported/gear.png-5daf42b040f457a996f89d78af25c936.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bv1l"]
+atlas = SubResource("CompressedTexture2D_kdhhk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n6k0q"]
+load_path = "res://.godot/imported/gear.png-5daf42b040f457a996f89d78af25c936.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1arlm"]
+atlas = SubResource("CompressedTexture2D_n6k0q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5bv1l"]
+load_path = "res://.godot/imported/gear.png-5daf42b040f457a996f89d78af25c936.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gy6t"]
+atlas = SubResource("CompressedTexture2D_5bv1l")
+region = Rect2(16, 16, 16, 16)
+
 [node name="PauseMenu" type="CanvasLayer" unique_id=890266434]
 process_mode = 3
 script = ExtResource("1_rwe7i")
+metadata/_edit_horizontal_guides_ = [55.0, 215.0]
+metadata/_edit_vertical_guides_ = [265.0]
 
 [node name="Control" type="Control" parent="." unique_id=501743406]
 layout_mode = 3
@@ -71,7 +99,7 @@ layout_mode = 0
 offset_left = 24.0
 offset_top = 20.0
 offset_right = 220.0
-offset_bottom = 108.0
+offset_bottom = 180.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rwe7i")
 
 [node name="GridContainer" type="GridContainer" parent="Control/TabContainer/Inventory/PanelContainer" unique_id=740533857]
@@ -98,12 +126,116 @@ layout_mode = 2
 [node name="InventorySlot6" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=95514426 instance=ExtResource("3_u4fh8")]
 layout_mode = 2
 
+[node name="InventorySlot7" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=1876745525 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=680051487 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=490613609 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=113006439 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=1027206280 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=1542378889 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=1647466613 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=227238767 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=391833591 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=592106105 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=689098870 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=123657527 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=204826986 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="Control/TabContainer/Inventory/PanelContainer/GridContainer" unique_id=835300698 instance=ExtResource("3_u4fh8")]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control/TabContainer/Inventory" unique_id=1749027213]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 92.0
+offset_right = 461.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rwe7i")
+
+[node name="GridContainer" type="GridContainer" parent="Control/TabContainer/Inventory/PanelContainer2" unique_id=716931542]
+layout_mode = 2
+columns = 5
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1803671328]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_n6k0q")
+stretch_mode = 3
+
+[node name="InventorySlotArmor" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1051002504 instance=ExtResource("3_u4fh8")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=731607995]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=590382608]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_5bv1l")
+stretch_mode = 3
+
+[node name="InventorySlotAmulete" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1703108060 instance=ExtResource("3_u4fh8")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1249702496]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1arlm")
+stretch_mode = 3
+
+[node name="InventorySlotWeapon" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1979081354 instance=ExtResource("3_u4fh8")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1664304006]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1007639846]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_4gy6t")
+stretch_mode = 3
+
+[node name="InventorySlotRing" parent="Control/TabContainer/Inventory/PanelContainer2/GridContainer" unique_id=1622642932 instance=ExtResource("3_u4fh8")]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="StatsPanelContainer" parent="Control/TabContainer/Inventory" unique_id=1609854217 instance=ExtResource("6_bpe16")]
 layout_mode = 0
-offset_left = 270.0
+offset_left = 265.0
 offset_top = 20.0
-offset_right = 457.0
-offset_bottom = 124.0
+offset_right = 461.0
+offset_bottom = 79.0
 
 [node name="ItemDescription" type="Label" parent="Control/TabContainer/Inventory" unique_id=473431759]
 modulate = Color(1, 1, 1, 0.64705884)
@@ -112,9 +244,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -208.0
-offset_top = 109.0
-offset_right = -25.0
-offset_bottom = 132.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 207.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("7_vwsmh")
 theme_override_font_sizes/font_size = 16

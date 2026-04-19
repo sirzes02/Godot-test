@@ -29,10 +29,7 @@ func set_slot_data(value: SlotData) -> void:
 		label.text = str(slot_data.quantity)
 
 func item_focused() -> void:
-	if slot_data == null or slot_data.item_data == null:
-		return
-
-	PauseMenu.update_item_description(slot_data.item_data.description)
+	PauseMenu.focused_item_changed(slot_data)
 	pass
 	
 func item_unfocused() -> void:
@@ -41,9 +38,15 @@ func item_unfocused() -> void:
 	
 func item_pressed() -> void:
 	if slot_data and slot_data.item_data:
-		var was_used = slot_data.item_data.use()
+		var item = slot_data.item_data
 		
-		if !was_used:
+		if item is EquipableItemData:
+			PlayerManager.INVENTORY_DATA.equip_item(slot_data)
+			return
+		
+		var was_used = item.use()
+		
+		if not was_used:
 			return
 			
 		slot_data.quantity -= 1

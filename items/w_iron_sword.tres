@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://sep36nxqotsq" path="res://items/scripts/equipable_item_modifier.gd" id="2_7pfk8"]
 [ext_resource type="Script" uid="uid://cj4r6dtclfo33" path="res://items/scripts/equipable_item_data.gd" id="3_iql6b"]
 [ext_resource type="Texture2D" uid="uid://rn0dkbc7y265" path="res://items/sprites/gear.png" id="4_7pfk8"]
+[ext_resource type="Texture2D" uid="uid://8lfj0kih6jli" path="res://player/sprites/player_sprite_sword.png" id="4_iql6b"]
 
 [sub_resource type="Resource" id="Resource_7pfk8"]
 script = ExtResource("2_7pfk8")
@@ -17,6 +18,7 @@ region = Rect2(32, 0, 32, 32)
 [resource]
 script = ExtResource("3_iql6b")
 modifiers = Array[ExtResource("2_7pfk8")]([SubResource("Resource_7pfk8")])
+sprite_texture = ExtResource("4_iql6b")
 name = "Iron Sword"
 description = "A standard sword, made of iron."
 texture = SubResource("AtlasTexture_iql6b")

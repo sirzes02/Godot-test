@@ -1,7 +1,11 @@
 class_name InventorySlotUI extends Button
 
 var slot_data: SlotData :
-	set = set_slot_data
+	set = set_slot_data 
+var click_pos: Vector2 = Vector2.ZERO
+var dragging: bool = false
+var drag_texture: Control
+var drag_threshold: float = 16.0
 
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
@@ -12,6 +16,19 @@ func _ready() -> void:
 	focus_entered.connect(item_focused)
 	focus_exited.connect(item_unfocused)
 	pressed.connect(item_pressed)
+	button_down.connect(_on_button_down)
+	button_up.connect(_on_button_up)
+	
+func _process(_delta: float) -> void:
+	if dragging:
+		drag_texture.position = get_local_mouse_position() - Vector2(16, 16)
+		
+		if outside_drag_threshold():
+			drag_texture.modulate.a = 0.5
+		else:
+			drag_texture.modulate.a = 0.0
+	
+	pass
 
 func set_slot_data(value: SlotData) -> void:
 	slot_data = value
@@ -37,7 +54,7 @@ func item_unfocused() -> void:
 	pass
 	
 func item_pressed() -> void:
-	if slot_data and slot_data.item_data:
+	if slot_data and not outside_drag_threshold() and slot_data.item_data:
 		var item = slot_data.item_data
 		
 		if item is EquipableItemData:
@@ -55,3 +72,27 @@ func item_pressed() -> void:
 			return
 		
 		label.text = str(slot_data.quantity)
+
+func _on_button_down() -> void:
+	click_pos = get_global_mouse_position()
+	dragging = true
+	drag_texture = texture_rect.duplicate()
+	drag_texture.z_index = 10
+	drag_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(drag_texture)
+
+	pass
+	
+func _on_button_up() -> void:
+	dragging = false
+	
+	if drag_texture:
+		drag_texture.free()
+	
+	pass
+
+func outside_drag_threshold() -> bool:
+	if get_global_mouse_position().distance_to(click_pos) > drag_threshold:
+		return true
+	
+	return false

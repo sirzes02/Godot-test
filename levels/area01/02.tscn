@@ -30,6 +30,10 @@
 [ext_resource type="Resource" uid="uid://b2h5mk1u6vn2i" path="res://items/a_ninja_suit.tres" id="26_khk8w"]
 [ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/treasure_chest/treasure_chest.tscn" id="27_khk8w"]
 [ext_resource type="Resource" uid="uid://s8oc641vwnya" path="res://items/w_katana.tres" id="28_i8f5t"]
+[ext_resource type="PackedScene" uid="uid://dl5vcyjj1xbno" path="res://items/item_pickup/item_pickup.tscn" id="31_2qxbl"]
+[ext_resource type="Resource" uid="uid://dsjot8ebsf5se" path="res://items/apple.tres" id="32_x3xob"]
+[ext_resource type="Resource" uid="uid://8qgcg0rmriho" path="res://items/gem.tres" id="33_p5ul8"]
+[ext_resource type="Resource" uid="uid://d0qvih0usgnvp" path="res://items/stone.tres" id="34_p8uri"]
 
 [sub_resource type="GDScript" id="GDScript_gprtj"]
 script/source = "extends Node
@@ -353,3 +357,17 @@ item_data = ExtResource("28_i8f5t")
 [node name="TreasureChest2" parent="." unique_id=2080397354 instance=ExtResource("27_khk8w")]
 position = Vector2(30, 40)
 item_data = ExtResource("26_khk8w")
+
+[node name="Node" type="Node" parent="." unique_id=961315454]
+
+[node name="ItemPickup" parent="Node" unique_id=1051385999 instance=ExtResource("31_2qxbl")]
+position = Vector2(15, 109)
+item_data = ExtResource("32_x3xob")
+
+[node name="ItemPickup2" parent="Node" unique_id=437850397 instance=ExtResource("31_2qxbl")]
+position = Vector2(16, 156)
+item_data = ExtResource("33_p5ul8")
+
+[node name="ItemPickup3" parent="Node" unique_id=765206189 instance=ExtResource("31_2qxbl")]
+position = Vector2(16, 133)
+item_data = ExtResource("34_p8uri")

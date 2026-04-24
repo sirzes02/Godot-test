@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dplj0nmib8k77" path="res://gui/fonts/m5x7.ttf" id="1_d0bm4"]
 [ext_resource type="Texture2D" uid="uid://xv7vbfodkwkx" path="res://items/sprites/items.png" id="1_q0wgi"]
+[ext_resource type="Script" uid="uid://xfikwvruxlxd" path="res://gui/shop_menu/shop_item_button.gd" id="1_xer4e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0bm4"]
 atlas = ExtResource("1_q0wgi")
@@ -9,6 +10,7 @@ region = Rect2(0, 0, 32, 32)
 
 [node name="ShopItemButton" type="Button" unique_id=1963065826]
 custom_minimum_size = Vector2(220, 36)
+script = ExtResource("1_xer4e")
 
 [node name="Label" type="Label" parent="." unique_id=795351352]
 layout_mode = 0

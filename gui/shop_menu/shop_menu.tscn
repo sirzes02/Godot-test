@@ -240,17 +240,6 @@ theme_override_fonts/font = ExtResource("3_yh2rx")
 text = "999"
 autowrap_mode = 2
 
-[node name="InventoryCountLabel" type="Label" parent="Control/DetailsPanel/Control" unique_id=140436357]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 27.0
-offset_right = 179.0
-offset_bottom = 42.0
-theme_override_colors/font_color = Color(0.5803922, 0.5803922, 0.5803922, 1)
-theme_override_fonts/font = ExtResource("3_yh2rx")
-text = "In Inventory"
-autowrap_mode = 2
-
 [node name="ItemHeldCount" type="Label" parent="Control/DetailsPanel/Control" unique_id=1979352819]
 unique_name_in_owner = true
 layout_mode = 0
@@ -260,6 +249,17 @@ offset_right = 93.0
 offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("3_yh2rx")
 text = "999"
+autowrap_mode = 2
+
+[node name="InventoryCountLabel" type="Label" parent="Control/DetailsPanel/Control" unique_id=140436357]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 27.0
+offset_right = 179.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.5803922, 0.5803922, 0.5803922, 1)
+theme_override_fonts/font = ExtResource("3_yh2rx")
+text = "In Inventory"
 autowrap_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control/DetailsPanel/Control" unique_id=111934913]

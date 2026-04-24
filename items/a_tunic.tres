@@ -24,4 +24,5 @@ name = "Tunic & Cape"
 description = "The Tunic is clean and pressed,
 and the cape is oh-so-stylish."
 texture = SubResource("AtlasTexture_iql6b")
+cost = 150
 metadata/_custom_type_script = "uid://cj4r6dtclfo33"

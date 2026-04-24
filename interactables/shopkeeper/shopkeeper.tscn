@@ -1,10 +1,16 @@
-[gd_scene format=3 uid="uid://caduja2rgl2gk"]
+[gd_scene format=3 uid="uid://mimqfud57trs"]
 
-[ext_resource type="Script" uid="uid://bu8qn5i11dg3l" path="res://interactables/dialog/scripts/dialog_interaction.gd" id="1_ea8i5"]
-[ext_resource type="Texture2D" uid="uid://bcdddwg3xqqnx" path="res://interactables/dialog/sprites/dialog_interactable.png" id="1_ls8k1"]
+[ext_resource type="Script" uid="uid://buvyy74cqvgp" path="res://interactables/shopkeeper/shopkeeper.gd" id="1_j0qk2"]
+[ext_resource type="PackedScene" uid="uid://dvhdmorcq4463" path="res://npc/npc.tscn" id="1_qhsms"]
+[ext_resource type="Resource" uid="uid://b3gg0hysa0wuy" path="res://npc/00_npcs/shopkeeper.tres" id="2_7bcfr"]
+[ext_resource type="Script" uid="uid://bu8qn5i11dg3l" path="res://interactables/dialog/scripts/dialog_interaction.gd" id="3_5r7ey"]
+[ext_resource type="Script" uid="uid://cdkb66e1trluv" path="res://interactables/dialog/scripts/dialog_text.gd" id="4_0lrd4"]
+[ext_resource type="Texture2D" uid="uid://bcdddwg3xqqnx" path="res://interactables/dialog/sprites/dialog_interactable.png" id="4_j0qk2"]
+[ext_resource type="Script" uid="uid://dxh704n11u36o" path="res://interactables/dialog/scripts/dialog_choice.gd" id="5_rcbic"]
+[ext_resource type="Script" uid="uid://dxq1ime3bskty" path="res://interactables/dialog/scripts/dialog_branch.gd" id="6_5r7ey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnp34"]
-size = Vector2(44, 32)
+size = Vector2(44, 59)
 
 [sub_resource type="Animation" id="Animation_ea8i5"]
 length = 0.001
@@ -124,24 +130,62 @@ _data = {
 &"show": SubResource("Animation_jacjr")
 }
 
-[node name="DialogInteraction" type="Area2D" unique_id=1316307863]
+[node name="Shopkeeper" type="Node2D" unique_id=381371950]
+script = ExtResource("1_j0qk2")
+
+[node name="NPC" parent="." unique_id=278842197 instance=ExtResource("1_qhsms")]
+npc_resource = ExtResource("2_7bcfr")
+
+[node name="DialogInteraction" type="Area2D" parent="NPC" unique_id=1316307863]
 process_mode = 3
 collision_layer = 0
 collision_mask = 4
 monitorable = false
-script = ExtResource("1_ea8i5")
+script = ExtResource("3_5r7ey")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1647878669]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/DialogInteraction" unique_id=1647878669]
 z_index = 100
+position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_jnp34")
 debug_color = Color(0.3529412, 0.8235294, 0.4862745, 0.1764706)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619309519]
+[node name="Sprite2D" type="Sprite2D" parent="NPC/DialogInteraction" unique_id=1619309519]
 position = Vector2(2, -52)
-texture = ExtResource("1_ls8k1")
+texture = ExtResource("4_j0qk2")
 hframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=915632589]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC/DialogInteraction" unique_id=915632589]
 process_mode = 3
 libraries/ = SubResource("AnimationLibrary_ea8i5")
 autoplay = &"default"
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1694664228]
+script = ExtResource("4_0lrd4")
+text = "
+May I interest you in my wares?"
+npc_info = ExtResource("2_7bcfr")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogChoice" type="Node" parent="NPC/DialogInteraction" unique_id=571316405]
+script = ExtResource("5_rcbic")
+npc_info = ExtResource("2_7bcfr")
+metadata/_custom_type_script = "uid://dxh704n11u36o"
+
+[node name="DialogBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice" unique_id=1278011037]
+script = ExtResource("6_5r7ey")
+text = "Yes."
+npc_info = ExtResource("2_7bcfr")
+metadata/_custom_type_script = "uid://dxq1ime3bskty"
+
+[node name="DialogBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice" unique_id=737379115]
+script = ExtResource("6_5r7ey")
+text = "No."
+npc_info = ExtResource("2_7bcfr")
+metadata/_custom_type_script = "uid://dxq1ime3bskty"
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2" unique_id=195400743]
+script = ExtResource("4_0lrd4")
+text = "
+I will be here when you need some stuff."
+npc_info = ExtResource("2_7bcfr")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"

@@ -2,8 +2,9 @@ class_name State_Walk extends State
 
 @export var move_speed: float = 100.0
 
-@onready var idle: State_Idle = $"../Idle"
-@onready var attack: State_Attack = $"../Attack"
+@onready var idle: State = $"../Idle"
+@onready var attack: State = $"../Attack"
+@onready var dash: State = $"../Dash"
 
 func enter() -> void:
 	player.updateAnimation("walk")
@@ -32,5 +33,7 @@ func handled_input(_event: InputEvent) -> State:
 		return attack
 	elif _event.is_action_pressed("interact"):
 		PlayerManager.interact()
+	elif _event.is_action_pressed("dash"):
+		return dash
 	
 	return null

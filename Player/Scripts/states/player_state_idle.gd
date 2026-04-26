@@ -1,8 +1,8 @@
 class_name State_Idle extends State
 
-@onready var walk: State_Walk = $"../Walk"
-@onready var attack: State_Attack = $"../Attack"
-
+@onready var walk: State = $"../Walk"
+@onready var attack: State = $"../Attack"
+@onready var dash: State = $"../Dash"
 
 func enter() -> void:
 	player.updateAnimation("idle")
@@ -26,5 +26,7 @@ func handled_input(_event: InputEvent) -> State:
 		return attack
 	elif _event.is_action_pressed("interact"):
 		PlayerManager.interact()
+	elif _event.is_action_pressed("dash"):
+		return dash
 
 	return null

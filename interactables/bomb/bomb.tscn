@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://wl4tpbi7cxon" path="res://interactables/bomb/assets/bomb.png" id="1_6rbys"]
 [ext_resource type="Script" uid="uid://cs0ie2wybe37j" path="res://general_nodes/hurt_box/hurt_box.gd" id="1_a7mwd"]
 [ext_resource type="AudioStream" uid="uid://t2fe036g1s4w" path="res://interactables/bomb/assets/bomb_explosion.wav" id="2_lnmif"]
+[ext_resource type="Script" uid="uid://cya6mfskootfg" path="res://interactables/bomb/bomb.gd" id="4_4k44t"]
+[ext_resource type="PackedScene" uid="uid://4t86nwows4h5" path="res://interactables/throwable/throwable.tscn" id="4_4v1c3"]
 
 [sub_resource type="Gradient" id="Gradient_6rbys"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
@@ -36,7 +38,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BombSprite:visible")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,7 +50,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BombSprite:frame")
+tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -60,7 +62,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BombSprite:modulate")
+tracks/3/path = NodePath("Sprite2D:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -124,7 +126,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BombSprite:visible")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -136,7 +138,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BombSprite:frame")
+tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -148,7 +150,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BombSprite:modulate")
+tracks/3/path = NodePath("Sprite2D:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -212,7 +214,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BombSprite:visible")
+tracks/2/path = NodePath("Sprite2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -271,12 +273,15 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnmif"]
 radius = 50.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4k44t"]
+size = Vector2(16, 8)
+
 [node name="Bomb" type="Node2D" unique_id=1840538683]
 
 [node name="ShadowSprite" type="Sprite2D" parent="." unique_id=1719523592]
 texture = SubResource("GradientTexture2D_lnmif")
 
-[node name="BombSprite" type="Sprite2D" parent="." unique_id=2052216109]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052216109]
 position = Vector2(0, -7)
 texture = SubResource("AtlasTexture_lnmif")
 hframes = 4
@@ -306,3 +311,14 @@ metadata/_custom_type_script = "uid://cs0ie2wybe37j"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=810084954]
 shape = SubResource("CircleShape2D_lnmif")
 debug_color = Color(0.70196074, 0, 0.022523373, 0)
+
+[node name="Throwable" parent="." unique_id=828730129 instance=ExtResource("4_4v1c3")]
+script = ExtResource("4_4k44t")
+fuse_duration = 10.0
+bounciness = 0.5
+max_bounce = 5
+throw_speed = 300.0
+throw_height_strength = 150.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Throwable" unique_id=1936079206]
+shape = SubResource("RectangleShape2D_4k44t")

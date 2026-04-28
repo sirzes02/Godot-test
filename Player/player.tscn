@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://dl53clcexdvpe" path="res://player/audio/level_up_jingle.wav" id="28_2uvqg"]
 [ext_resource type="FontFile" uid="uid://dplj0nmib8k77" path="res://gui/fonts/m5x7.ttf" id="30_b8hi5"]
 [ext_resource type="PackedScene" uid="uid://e4cdooygsd0k" path="res://general_nodes/footsteps_audio_2d/footstep_audio_2d.tscn" id="34_jd2rm"]
+[ext_resource type="Texture2D" uid="uid://cmdb3trqo160h" path="res://player/sprites/grapple.png" id="37_pnw6m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
@@ -1875,7 +1876,7 @@ color = Color(0, 1, 0.47058824, 1)
 color_ramp = SubResource("GradientTexture1D_2uvqg")
 
 [node name="Player" type="CharacterBody2D" unique_id=1016505691]
-collision_mask = 16
+collision_mask = 24
 motion_mode = 1
 wall_min_slide_angle = 0.17453292
 script = ExtResource("1_4ntmi")
@@ -2105,3 +2106,18 @@ explosiveness = 0.25
 process_material = SubResource("ParticleProcessMaterial_b8hi5")
 
 [node name="FootstepAudio2D" parent="." unique_id=1212112243 instance=ExtResource("34_jd2rm")]
+
+[node name="GrappleHook" type="Node2D" parent="." unique_id=1961555110]
+unique_name_in_owner = true
+position = Vector2(0, -14)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GrappleHook" unique_id=579275545]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 25.0
+texture = ExtResource("37_pnw6m")
+patch_margin_top = 16
+patch_margin_bottom = 9
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true

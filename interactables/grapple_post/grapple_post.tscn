@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://lg8sj7d56cfq"]
+
+[ext_resource type="Texture2D" uid="uid://c4naonjl3ao7u" path="res://interactables/grapple_post/grapple_post.png" id="1_g1yan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1yan"]
+size = Vector2(12, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wurfa"]
+size = Vector2(18, 14)
+
+[node name="GrapplePost" type="Node2D" unique_id=1778729989]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=568774531]
+position = Vector2(0, -12)
+texture = ExtResource("1_g1yan")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1735019445]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=775825324]
+shape = SubResource("RectangleShape2D_g1yan")
+debug_color = Color(0, 0.5950001, 0.7, 0)
+
+[node name="GrapplePointStaticBody2D" type="StaticBody2D" parent="." unique_id=1342930793]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePointStaticBody2D" unique_id=1451142064]
+shape = SubResource("RectangleShape2D_wurfa")
+debug_color = Color(0, 0.5950001, 0.7, 0)

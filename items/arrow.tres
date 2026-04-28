@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://hh0g6brk7ikw"]
+
+[ext_resource type="Script" uid="uid://bw1n5f7oha62s" path="res://items/item_efffects/item_effect.gd" id="1_6whs2"]
+[ext_resource type="Script" uid="uid://ddmkpncjg57ak" path="res://items/item_efffects/item_effect_heal.gd" id="2_tqj6p"]
+[ext_resource type="AudioStream" uid="uid://ddgi1wqum2p16" path="res://items/item_efffects/hp-up.wav" id="3_pl5fn"]
+[ext_resource type="Script" uid="uid://dk26mo3s51sr3" path="res://items/scripts/item_data.gd" id="4_rlwpw"]
+[ext_resource type="Texture2D" uid="uid://drk5le0lm3uq8" path="res://items/sprites/items_02.png" id="5_6whs2"]
+
+[sub_resource type="Resource" id="Resource_qgymf"]
+script = ExtResource("2_tqj6p")
+sound = ExtResource("3_pl5fn")
+metadata/_custom_type_script = "uid://ddmkpncjg57ak"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ig1r"]
+atlas = ExtResource("5_6whs2")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+script = ExtResource("4_rlwpw")
+name = "Arrow"
+description = "A simple arrow!"
+texture = SubResource("AtlasTexture_8ig1r")
+effects = Array[ExtResource("1_6whs2")]([SubResource("Resource_qgymf")])
+metadata/_custom_type_script = "uid://dk26mo3s51sr3"

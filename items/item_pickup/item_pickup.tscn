@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://3mpvk1nxua70" path="res://items/item_pickup/item_pickup.gd" id="1_0g51u"]
 [ext_resource type="AudioStream" uid="uid://bn0grbkxs22l1" path="res://items/item_pickup/item_pickup.wav" id="2_0rscd"]
 [ext_resource type="Texture2D" uid="uid://b8bduxd7punv5" path="res://player/sprites/Shadow.png" id="2_jl14n"]
+[ext_resource type="FontFile" uid="uid://dplj0nmib8k77" path="res://gui/fonts/m5x7.ttf" id="4_tc5ok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0g51u"]
 
@@ -71,3 +72,13 @@ stream = ExtResource("2_0rscd")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=849379635]
 libraries/ = SubResource("AnimationLibrary_tc5ok")
 autoplay = &"default"
+
+[node name="CountLabel" type="Label" parent="." unique_id=330739944]
+unique_name_in_owner = true
+offset_right = 24.0
+offset_bottom = 18.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_tc5ok")
+text = "99"
+horizontal_alignment = 1

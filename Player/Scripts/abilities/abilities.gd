@@ -14,7 +14,7 @@ var boomerang_instance: Boomerang = null
 @onready var state_machine: PlayerStateMachine = $"../StateMachine"
 @onready var idle: State = $"../StateMachine/Idle"
 @onready var walk: State = $"../StateMachine/Walk"
-@onready var lift: State  = $"../StateMachine/Lift"
+@onready var lift: State = $"../StateMachine/Lift"
 @onready var bow: State = $"../StateMachine/Bow"
 @onready var grapple: State = $"../StateMachine/Grapple"
 
@@ -22,6 +22,14 @@ func _ready() -> void:
 	player = PlayerManager.player
 	PlayerHud.update_arrow_count(player.arrow_count)
 	PlayerHud.update_bomb_count(player.bomb_count)
+	setup_abilities()
+
+func setup_abilities() -> void:
+	PauseMenu.update_ability_items(abilities)
+	PlayerHud.update_ability_items(abilities)
+	selected_ability = 0
+	toggle_ability()
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ability"):
@@ -30,20 +38,27 @@ func _unhandled_input(event: InputEvent) -> void:
 				boomerang_ability()
 			1:
 				grapple_ability()
-			2: 
+			2:
 				bow_ability()
-			3: 
+			3:
 				bomb_ability()
 	elif event.is_action_pressed("switch_ability"):
 		toggle_ability()
 	pass
 
 func toggle_ability() -> void:
+	if abilities.count("") == abilities.size():
+		return
+	
 	selected_ability = wrapi(selected_ability + 1, 0, 4)
+	
+	while abilities[selected_ability] == "":
+		selected_ability = wrapi(selected_ability + 1, 0, 4)
+	
 	PlayerHud.update_ability_UI(selected_ability)
 	pass
 
-func boomerang_ability()-> void:
+func boomerang_ability() -> void:
 	if boomerang_instance != null:
 		return
 	

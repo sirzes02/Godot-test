@@ -126,50 +126,51 @@ offset_right = 60.0
 offset_bottom = 180.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rwe7i")
 
-[node name="GridContainer" type="GridContainer" parent="Control/TabContainer/Inventory/AbilityContainer" unique_id=1246217357]
+[node name="AbilityGridContainer" type="GridContainer" parent="Control/TabContainer/Inventory/AbilityContainer" unique_id=1246217357]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="InventorySlot" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer" unique_id=333369102]
+[node name="InventorySlot" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer" unique_id=333369102]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 script = ExtResource("3_5bv1l")
 description = "This boomerang will always return to you after thrown. It can grab items too!"
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer/InventorySlot" unique_id=48575359]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer/InventorySlot" unique_id=48575359]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = SubResource("AtlasTexture_2rauu")
 stretch_mode = 3
 
-[node name="InventorySlot2" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer" unique_id=1238824581]
+[node name="InventorySlot2" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer" unique_id=1238824581]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 script = ExtResource("3_5bv1l")
 description = "OOOh, this thing looks very grapply!"
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer/InventorySlot2" unique_id=888654080]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer/InventorySlot2" unique_id=888654080]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = SubResource("AtlasTexture_sxt6q")
 stretch_mode = 3
 
-[node name="InventorySlot3" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer" unique_id=1866614523]
+[node name="InventorySlot3" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer" unique_id=1866614523]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 script = ExtResource("3_5bv1l")
 description = "A trusty bow and arrow.
 Every adventurer needs one."
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer/InventorySlot3" unique_id=93342768]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer/InventorySlot3" unique_id=93342768]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = SubResource("AtlasTexture_bbbn4")
 stretch_mode = 3
 
-[node name="ArrowCountLabel" type="Label" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer/InventorySlot3" unique_id=2027704257]
+[node name="ArrowCountLabel" type="Label" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer/InventorySlot3" unique_id=2027704257]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 29.0
@@ -178,20 +179,20 @@ theme_override_fonts/font = ExtResource("7_vwsmh")
 theme_override_font_sizes/font_size = 15
 text = "99"
 
-[node name="InventorySlot4" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer" unique_id=1975056147]
+[node name="InventorySlot4" type="Button" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer" unique_id=1975056147]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 script = ExtResource("3_5bv1l")
 description = "These bombs has a 4 second fuse. Once you throw it stay back!"
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer/InventorySlot4" unique_id=1211738720]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer/InventorySlot4" unique_id=1211738720]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = SubResource("AtlasTexture_ynjso")
 stretch_mode = 3
 
-[node name="BombCountLabel" type="Label" parent="Control/TabContainer/Inventory/AbilityContainer/GridContainer/InventorySlot4" unique_id=1094435329]
+[node name="BombCountLabel" type="Label" parent="Control/TabContainer/Inventory/AbilityContainer/AbilityGridContainer/InventorySlot4" unique_id=1094435329]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 29.0

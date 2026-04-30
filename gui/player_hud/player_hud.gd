@@ -124,7 +124,14 @@ func update_boss_health(hp: int, max_hp: int) -> void:
 func queue_notification(_title: String, _message: String) -> void:
 	notification.add_notification_to_queue(_title, _message)
 	pass
+
+func update_ability_items(items: Array[String]) -> void:
+	var abilities_array: Array[Node] = ability_items.get_children()
 	
+	for i in abilities_array.size():
+		abilities_array[i].visible = items[i] != ""
+	pass
+
 func update_ability_UI(ability_index: int) -> void:
 	var _items: Array[Node] = ability_items.get_children()
 	

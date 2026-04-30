@@ -17,12 +17,12 @@ class_name State_Grapple extends State
 
 var collision_distance: float
 var collision_type: int = 0
-var nin_patch_size: float = 25.0
+var nine_patch_size: float = 25.0
 var tween: Tween
 var next_stage: State = null
 var positions: Array[Vector3] = [
-	Vector3(8.0, -20.0, 180.0),
-	Vector3(8.0, -10.0, 0.0),
+	Vector3(0, -20.0, 180.0),
+	Vector3(0, -10.0, 0.0),
 	Vector3(-10.0, -15.0, 90.0),
 	Vector3(10.0, -15.0, -90.0),
 ]
@@ -56,7 +56,7 @@ func exit() -> void:
 	grapple_hurt_box.monitoring = false
 	chain_audio_player.stop()
 	tween.kill()
-	nine_patch_rect.size.y = nin_patch_size
+	nine_patch_rect.size.y = nine_patch_size
 	pass
 	
 func process(_delta: float) -> State:
@@ -132,12 +132,12 @@ func grapple_player() -> void:
 	tween = create_tween()
 	tween.tween_property(
 		nine_patch_rect, "size",
-		Vector2(nine_patch_rect.size.x, nin_patch_size),
+		Vector2(nine_patch_rect.size.x, nine_patch_size),
 		tween_duration
 	)
 	var player_target: Vector2 = player.global_position
 	player_target += (player.cardinal_direction * collision_distance)
-	player_target -= player.cardinal_direction * 10
+	player_target -= player.cardinal_direction * nine_patch_size
 	
 	tween.parallel().tween_property(
 		player, "global_position",
@@ -159,7 +159,7 @@ func return_grapple() -> void:
 	tween = create_tween()
 	tween.tween_property(
 		nine_patch_rect, "size",
-		Vector2(nine_patch_rect.size.x, nin_patch_size),
+		Vector2(nine_patch_rect.size.x, nine_patch_size),
 		tween_duration
 	)
 	tween.tween_callback(grapple_finished)

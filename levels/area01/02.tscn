@@ -398,7 +398,9 @@ position = Vector2(-16, 8)
 [node name="GrapplePosts" type="Node" parent="." unique_id=627212968]
 
 [node name="GrapplePost" parent="GrapplePosts" unique_id=1778729989 instance=ExtResource("37_p8uri")]
+z_index = -1
 position = Vector2(572, 270)
 
 [node name="GrapplePost2" parent="GrapplePosts" unique_id=2123175789 instance=ExtResource("37_p8uri")]
-position = Vector2(534, 387)
+z_index = -1
+position = Vector2(534, 401)

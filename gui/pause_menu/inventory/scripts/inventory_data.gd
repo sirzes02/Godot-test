@@ -1,6 +1,7 @@
 class_name InventoryData extends Resource
 
 signal equipment_changed
+signal ability_adquired(ability: AbilityItemData)
 
 @export var slots: Array[SlotData]
 
@@ -17,6 +18,10 @@ func equipment_slots() -> Array[SlotData]:
 	return slots.slice(-equipment_slot_count, slots.size())
 
 func add_item(item: ItemData, count: int = 1) -> bool:
+	if item is AbilityItemData:
+		ability_adquired.emit(item)
+		return true
+
 	for slot in slots:
 		if slot and slot.item_data == item:
 			slot.quantity += count

@@ -26,8 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="19_nr2go"]
 [ext_resource type="PackedScene" uid="uid://c04y20xn0hr4k" path="res://interactables/dungeon/pressure_plate.tscn" id="20_2yxo7"]
 [ext_resource type="Resource" uid="uid://bgus56vk87m0n" path="res://quests/recover_lost_flute.tres" id="21_2yxo7"]
+[ext_resource type="Resource" uid="uid://bpfo4j28ocb3r" path="res://items/ability_grapple.tres" id="21_4bmhj"]
 [ext_resource type="PackedScene" uid="uid://x7mqxn0cs75f" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="21_bn6vq"]
+[ext_resource type="Resource" uid="uid://dtx6lxi48qiae" path="res://items/ability_boomerang.tres" id="21_itvj1"]
 [ext_resource type="Resource" uid="uid://b2rlo1r6dioao" path="res://quests/long_quest.tres" id="22_bn6vq"]
+[ext_resource type="Resource" uid="uid://dwhokjudw2wpw" path="res://items/ability_bomb.tres" id="22_ryrsf"]
+[ext_resource type="Resource" uid="uid://bi4yh22egfq85" path="res://items/ability_arrow.tres" id="23_q5lwh"]
 [ext_resource type="PackedScene" uid="uid://dnete4104lbhm" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="24_gprtj"]
 [ext_resource type="Resource" uid="uid://b2h5mk1u6vn2i" path="res://items/a_ninja_suit.tres" id="26_khk8w"]
 [ext_resource type="PackedScene" uid="uid://dfsdlruxpe7ms" path="res://interactables/treasure_chest/treasure_chest.tscn" id="27_khk8w"]
@@ -107,7 +111,7 @@ position = Vector2(67, 266)
 [node name="Items" type="Node" parent="." unique_id=961315454]
 
 [node name="ItemPickup" parent="Items" unique_id=1051385999 instance=ExtResource("31_2qxbl")]
-position = Vector2(15, 109)
+position = Vector2(10.075991, 127.94419)
 item_data = ExtResource("32_x3xob")
 
 [node name="ItemPickup2" parent="Items" unique_id=437850397 instance=ExtResource("31_2qxbl")]
@@ -119,25 +123,25 @@ position = Vector2(16, 133)
 item_data = ExtResource("34_p8uri")
 
 [node name="ItemPickup4" parent="Items" unique_id=916680405 instance=ExtResource("31_2qxbl")]
-position = Vector2(209, 143)
+position = Vector2(195.79955, 49.943237)
 item_data = ExtResource("14_x3xob")
 item_count = 2
 
 [node name="ItemPickup5" parent="Items" unique_id=747569766 instance=ExtResource("31_2qxbl")]
-position = Vector2(251, 142)
+position = Vector2(242.64262, 167.02318)
 item_data = ExtResource("15_p5ul8")
 item_count = 5
 
 [node name="Enemies" type="Node" parent="." unique_id=1666033947]
 
 [node name="Goblin" parent="Enemies" unique_id=2128325190 instance=ExtResource("6_wvwyy")]
-position = Vector2(476, -6)
+position = Vector2(158, 47)
 
 [node name="Slime" parent="Enemies" unique_id=122133437 instance=ExtResource("9_btlmw")]
-position = Vector2(457, 23)
+position = Vector2(139, 76)
 
 [node name="Goblin2" parent="Enemies" unique_id=1971995651 instance=ExtResource("6_wvwyy")]
-position = Vector2(437, -5)
+position = Vector2(119, 48)
 
 [node name="Treasures" type="Node" parent="." unique_id=547430833]
 
@@ -149,10 +153,26 @@ item_data = ExtResource("28_i8f5t")
 position = Vector2(30, 40)
 item_data = ExtResource("26_khk8w")
 
+[node name="TreasureChest3" parent="Treasures" unique_id=778249699 instance=ExtResource("27_khk8w")]
+position = Vector2(414, -19)
+item_data = ExtResource("21_4bmhj")
+
+[node name="TreasureChest4" parent="Treasures" unique_id=1366649268 instance=ExtResource("27_khk8w")]
+position = Vector2(457, -19)
+item_data = ExtResource("22_ryrsf")
+
+[node name="TreasureChest5" parent="Treasures" unique_id=1174050583 instance=ExtResource("27_khk8w")]
+position = Vector2(501, -19)
+item_data = ExtResource("23_q5lwh")
+
+[node name="TreasureChest6" parent="Treasures" unique_id=1757837543 instance=ExtResource("27_khk8w")]
+position = Vector2(371, -19)
+item_data = ExtResource("21_itvj1")
+
 [node name="Missions" type="Node" parent="." unique_id=663282240]
 
 [node name="NPC" parent="Missions" unique_id=278842197 instance=ExtResource("8_q55yv")]
-position = Vector2(157, 54)
+position = Vector2(322.71814, -9.0138645)
 npc_resource = ExtResource("9_bemct")
 
 [node name="NpcBehaviorWander" parent="Missions/NPC" unique_id=1340077773 instance=ExtResource("9_kn07k")]

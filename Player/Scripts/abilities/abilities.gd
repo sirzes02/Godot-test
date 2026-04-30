@@ -4,7 +4,7 @@ const BOOMERANG = preload("res://player/boomerang.tscn")
 const BOMB = preload("uid://d01tyaukbh447")
 
 var abilities: Array[String] = [
-	"BOOMERANG", "GRAPPLE", "BOW", "BOMB"
+	"", "", "", ""
 ]
 
 var selected_ability: int = 0
@@ -24,11 +24,12 @@ func _ready() -> void:
 	PlayerHud.update_bomb_count(player.bomb_count)
 	setup_abilities()
 	SaveManager.game_loaded.connect(_on_game_loaded)
+	PlayerManager.INVENTORY_DATA.ability_adquired.connect(_on_ability_adquired)
 
-func setup_abilities() -> void:
+func setup_abilities(select_index: int = 0) -> void:
 	PauseMenu.update_ability_items(abilities)
 	PlayerHud.update_ability_items(abilities)
-	selected_ability = 0
+	selected_ability = select_index - 1
 	toggle_ability()
 	pass
 
@@ -116,4 +117,18 @@ func _on_game_loaded() -> void:
 		abilities.append(i)
 		
 	setup_abilities()
+	pass
+
+func _on_ability_adquired(_ability: AbilityItemData) -> void:
+	match _ability.type:
+		_ability.Type.BOOMERANG:
+			abilities[0] = "BOOMERANG"
+		_ability.Type.GRAPPLE:
+			abilities[1] = "GRAPPLE"
+		_ability.Type.BOW:
+			abilities[2] = "BOW"
+		_ability.Type.BOMB:
+			abilities[3] = "BOMB"
+	
+	setup_abilities(selected_ability)
 	pass

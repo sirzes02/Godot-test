@@ -31,6 +31,7 @@ var bomb_count: int = 10: set = _set_bomb_count
 @onready var idle: State = $StateMachine/Idle
 @onready var attack_hurt_box: HurtBox = %AttackHurtBox
 @onready var charge_spin_hurt_box: HurtBox = %ChargeSpinHurtBox
+@onready var player_abilities: PlayerAbilities = $Abilities
 
 signal direction_changed(new_direction: Vector2)
 signal player_damaged(hurt_box: HurtBox)

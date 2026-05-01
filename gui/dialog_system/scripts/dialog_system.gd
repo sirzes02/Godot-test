@@ -188,7 +188,7 @@ func show_dialog_button_indicator(_is_visible: bool) -> void:
 		label.text = "END"
 
 func start_timer() -> void:
-	if plain_text.length() <= 0:
+	if plain_text.length() <= 0 or rich_text_label.visible_characters - 1 >= plain_text.length() :
 		return
 	
 	timer.wait_time = text_speed

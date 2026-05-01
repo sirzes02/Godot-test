@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://lq61q3eoevei" path="res://interactables/dialog/scripts/dialog_cutscene.gd" id="9_drfer"]
 [ext_resource type="Script" uid="uid://cdkb66e1trluv" path="res://interactables/dialog/scripts/dialog_text.gd" id="9_s814m"]
 [ext_resource type="Script" uid="uid://dawwscas7l1k3" path="res://interactables/dialog/scripts/cutscene_action_animation.gd" id="10_drfer"]
+[ext_resource type="Script" uid="uid://c1tj1j1nxrwvn" path="res://interactables/dialog/scripts/cutscene_action_move.gd" id="12_2d4mg"]
+[ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="13_fqgqj"]
 
 [sub_resource type="Animation" id="Animation_2d4mg"]
 length = 0.001
@@ -40,7 +42,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 0.5]
 }
 
 [sub_resource type="Animation" id="Animation_fqgqj"]
@@ -56,7 +58,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0, 0.0]
+"values": [0.5, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2d4mg"]
@@ -95,7 +97,7 @@ script = ExtResource("9_drfer")
 npc_info = ExtResource("6_3g5lw")
 metadata/_custom_type_script = "uid://lq61q3eoevei"
 
-[node name="CutsceneActionAnimation" type="Node" parent="NPC/DialogInteraction/DialogCutscene" unique_id=406647389 node_paths=PackedStringArray("animation_player")]
+[node name="CutsceneActionAnimation" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene" unique_id=1759338158 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("10_drfer")
 animation_player = NodePath("../../../../AnimationPlayer")
 animation_name = "fade_to_black"
@@ -106,6 +108,29 @@ script = ExtResource("9_s814m")
 text = "Hey! Who turn off the lights?"
 npc_info = ExtResource("6_3g5lw")
 metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogCutscene3" type="Node" parent="NPC/DialogInteraction" unique_id=939094821]
+script = ExtResource("9_drfer")
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://lq61q3eoevei"
+
+[node name="CutsceneActionMove" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=247509124 node_paths=PackedStringArray("object_to_move")]
+position = Vector2(161, 86)
+script = ExtResource("12_2d4mg")
+object_to_move = NodePath("../../..")
+metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
+
+[node name="CutsceneActionMove2" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=575342414 node_paths=PackedStringArray("object_to_move")]
+position = Vector2(178, 196)
+script = ExtResource("12_2d4mg")
+object_to_move = NodePath("../../..")
+metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
+
+[node name="CutsceneActionMove3" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=1331517410 node_paths=PackedStringArray("object_to_move")]
+position = Vector2(388, 161)
+script = ExtResource("12_2d4mg")
+object_to_move = NodePath("../../../../Pot")
+metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
 
 [node name="DialogText2" type="Node" parent="NPC/DialogInteraction" unique_id=1318817124]
 script = ExtResource("9_s814m")
@@ -118,7 +143,7 @@ script = ExtResource("9_drfer")
 npc_info = ExtResource("6_3g5lw")
 metadata/_custom_type_script = "uid://lq61q3eoevei"
 
-[node name="CutsceneActionAnimation" type="Node" parent="NPC/DialogInteraction/DialogCutscene2" unique_id=1428102150 node_paths=PackedStringArray("animation_player")]
+[node name="CutsceneActionAnimation" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene2" unique_id=1939370260 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("10_drfer")
 animation_player = NodePath("../../../../AnimationPlayer")
 animation_name = "fade_to_normal"
@@ -137,3 +162,6 @@ libraries/ = SubResource("AnimationLibrary_2d4mg")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2044932986]
 energy = 0.0
 blend_mode = 1
+
+[node name="Pot" parent="." unique_id=1497701897 instance=ExtResource("13_fqgqj")]
+position = Vector2(122, 126)

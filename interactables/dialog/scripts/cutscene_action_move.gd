@@ -68,12 +68,12 @@ func _on_tween_finished() -> void:
 		npc.animation_player.speed_scale = 1
 		npc.process_mode = Node.PROCESS_MODE_INHERIT
 			
-	finished.emit( )
+	finished.emit()
 	pass
 
 func _draw() -> void:
 	if Engine.is_editor_hint():
 		draw_circle(Vector2.ZERO, 3, Color.RED)
-		draw_circle(Vector2.ZERO, 10, Color(1.0, 0 , 0, 0.5), false, 1.0)
+		draw_circle(Vector2.ZERO, 10, Color(1.0, 0, 0, 0.5), false, 1.0)
 	
 	pass

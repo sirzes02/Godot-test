@@ -2,7 +2,7 @@
 @icon("res://gui/dialog_system/icons/cutscene_actor.svg")
 class_name CutsceneActionMove extends CutsceneAction
 
-enum Method { DURATION, SPEED }
+enum Method {DURATION, SPEED}
 
 @export var timing_method: Method = Method.DURATION
 @export var object_to_move: Node2D

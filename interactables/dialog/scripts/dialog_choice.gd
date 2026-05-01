@@ -5,7 +5,7 @@ class_name DialogChoice extends DialogItem
 var dialog_branches: Array[DialogBranch]
 
 func _ready() -> void:
-	super()
+	super ()
 	for child in get_children():
 		if child is DialogBranch:
 			dialog_branches.append(child)
@@ -16,7 +16,7 @@ func _set_editor_display() -> void:
 	if dialog_branches.size() < 2:
 		return
 		
-	example_dialog.set_dialog_choice(self)
+	example_dialog.set_dialog_choice(self )
 	pass
 	
 func set_related_text() -> void:

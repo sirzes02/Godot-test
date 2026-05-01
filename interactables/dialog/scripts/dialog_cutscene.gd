@@ -4,7 +4,7 @@ class_name DialogCutscene extends DialogItem
 
 signal finished
 
-enum Mode { PARRALLEL, SEQUENTIAL }
+enum Mode {PARRALLEL, SEQUENTIAL}
 
 @export var playback_mode: Mode = Mode.SEQUENTIAL
 
@@ -12,7 +12,7 @@ var actions: Array[CutsceneAction] = []
 var actions_finished_count: int = 0
 
 func _ready() -> void:
-	gather_actions() 
+	gather_actions()
 	pass
 
 func gather_actions() -> void:

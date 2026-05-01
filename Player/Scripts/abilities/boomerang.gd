@@ -1,6 +1,6 @@
 class_name Boomerang extends Node2D
 
-enum State { INACTIVE, THROW, RETURN }
+enum State {INACTIVE, THROW, RETURN}
 
 var player: Player
 var direction: Vector2

@@ -10,7 +10,7 @@ signal selected
 var dialog_items: Array[DialogItem]
 
 func _ready() -> void:
-	super()
+	super ()
 	
 	for child in get_children():
 		if child is DialogItem:

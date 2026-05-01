@@ -22,7 +22,7 @@ func _ready() -> void:
 	prop = get_parent()
 	setup_collisions_boxes()
 	
-	object_sprite = prop.find_child ("Sprite2D")
+	object_sprite = prop.find_child("Sprite2D")
 	ground_height = object_sprite.position.y
 	animation_player = prop.find_child("AnimationPlayer")
 	
@@ -52,7 +52,7 @@ func player_interact() -> void:
 		
 		PlayerManager.player.held_item.add_child(prop)
 		prop.position = Vector2.ZERO
-		PlayerManager.player.pickup_item(self)
+		PlayerManager.player.pickup_item(self )
 		area_entered.disconnect(_on_area_enter)
 		area_exited.disconnect(_on_area_exit)
 		pass
@@ -63,10 +63,10 @@ func throw() -> void:
 	prop.get_parent().remove_child(prop)
 	PlayerManager.player.get_parent().call_deferred("add_child", prop)
 	prop.position = PlayerManager.player.position
-	object_sprite.position.y = -throw_starting_strength
-	vertical_velocity = -throw_height_strength
+	object_sprite.position.y = - throw_starting_strength
+	vertical_velocity = - throw_height_strength
 	set_physics_process(true)
-	hurt_box.set_deferred("monitoring", true )
+	hurt_box.set_deferred("monitoring", true)
 	hurt_box.did_damage.connect(did_damage)
 	wall_detect.body_entered.connect(_on_body_entered)
 	pass
@@ -132,4 +132,4 @@ func hit_ground() -> void:
 
 func did_damage() -> void:
 	destroy()
-	pass 
+	pass

@@ -23,7 +23,7 @@ func _ready() -> void:
 		child_order_changed.connect(gather_patrol_location)
 		return
 	pass
-	super()
+	super ()
 	
 	if patrol_location.size() == 0:
 		process_mode = Node.PROCESS_MODE_DISABLED
@@ -58,7 +58,7 @@ func gather_patrol_location(_n: Node = null):
 			var _next: PatrolLocation
 			if i < patrol_location.size() - 1:
 				_next = patrol_location[i + 1]
-			else :
+			else:
 				_next = patrol_location[0]
 			
 			_p.update_line(_next.position)
@@ -93,7 +93,7 @@ func idle_phase() -> void:
 	
 	if wait_item > 0:
 		timer.start(wait_item)
-		await  timer.timeout
+		await timer.timeout
 	
 	if !npc.do_behavior:
 		return

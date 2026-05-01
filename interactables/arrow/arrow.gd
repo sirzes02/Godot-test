@@ -1,6 +1,6 @@
 class_name Arrow extends Node2D
 
-@export var move_speed: float =300
+@export var move_speed: float = 300
 @export var fire_audio: AudioStream
 
 var move_dir: Vector2 = Vector2.RIGHT

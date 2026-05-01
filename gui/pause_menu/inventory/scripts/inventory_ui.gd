@@ -26,7 +26,7 @@ func clear_inventory() -> void:
 
 func update_inventory(apply_focus: bool = true) -> void:
 	clear_inventory()
-	var inventory_slots: Array[SlotData] = data.inventory_slots() 
+	var inventory_slots: Array[SlotData] = data.inventory_slots()
 
 	for i in inventory_slots.size():
 		var slot: InventorySlotUI = get_child(i)

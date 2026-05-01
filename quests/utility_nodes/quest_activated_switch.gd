@@ -2,7 +2,7 @@
 @icon("res://quests/utility_nodes/icons/quest_switch.png")
 class_name QuestActivatedSwitch extends QuestNode
 
-enum CheckType { HAS_QUEST, QUEST_STEP_COMPLETE, ON_CURRENT_QUEST_STEP, QUEST_COMPLETE}
+enum CheckType {HAS_QUEST, QUEST_STEP_COMPLETE, ON_CURRENT_QUEST_STEP, QUEST_COMPLETE}
 
 signal is_activated_changed(v: bool)
 
@@ -12,7 +12,7 @@ signal is_activated_changed(v: bool)
 @export var free_on_remove: bool = false
 @export var react_to_global_signal: bool = false
 
-var is_activated: bool =  false
+var is_activated: bool = false
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -28,13 +28,13 @@ func _ready() -> void:
 	check_is_activated()
 
 func check_is_activated() -> void:
-	var _q : Dictionary = QuestManager.find_quest(linked_quest)
+	var _q: Dictionary = QuestManager.find_quest(linked_quest)
 	
 	if _q.title != "not found":
 		if check_type == CheckType.HAS_QUEST:
 			set_is_activated(true)
 		elif check_type == CheckType.QUEST_COMPLETE:
-			var is_complete : bool = false
+			var is_complete: bool = false
 			
 			if _q.is_complete is bool:
 				is_complete = _q.is_complete
@@ -49,7 +49,7 @@ func check_is_activated() -> void:
 			else:
 				set_is_activated(false)
 		elif check_type == CheckType.ON_CURRENT_QUEST_STEP:
-			var step : String = get_step()
+			var step: String = get_step()
 			
 			if step == "N/A":
 				set_is_activated(false)
@@ -57,11 +57,11 @@ func check_is_activated() -> void:
 				if _q.completed_steps.has(step):
 					set_is_activated(false)
 				else:
-					var prev_step : String = get_prev_step()
+					var prev_step: String = get_prev_step()
 					
 					if prev_step == "N/A":
 						set_is_activated(true)
-					elif _q.completed_steps.has( prev_step.to_lower() ):
+					elif _q.completed_steps.has(prev_step.to_lower()):
 						set_is_activated(true)
 					else:
 						set_is_activated(false)
@@ -127,4 +127,4 @@ func update_summary() -> void:
 	elif check_type == CheckType.QUEST_COMPLETE:
 		settings_summary += "Checking if quest is complete"
 	
-	pass 
+	pass

@@ -20,7 +20,7 @@ func add_notification_to_queue(_title: String, _message: String) -> void:
 	if animation_player.is_playing():
 		return
 	
-	display_notification() 
+	display_notification()
 	pass
 
 func display_notification() -> void:

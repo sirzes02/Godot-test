@@ -30,7 +30,7 @@ var dialog_item_index: int = 0
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		if get_viewport() is Window:
-			get_parent().remove_child(self)
+			get_parent().remove_child(self )
 			return
 		return
 
@@ -65,10 +65,10 @@ func advance_dialog() -> void:
 	
 	if dialog_item_index < dialog_items.size():
 		start_dialog()
-	else: 
+	else:
 		hide_dialog()
 	
-	pass 
+	pass
 
 func show_dialog(_items: Array[DialogItem]) -> void:
 	is_active = true
@@ -163,7 +163,7 @@ func set_dialog_choice(_d: DialogChoice) -> void:
 	
 	pass
 	
-func _dialog_choice_selected(_d: DialogBranch)-> void:
+func _dialog_choice_selected(_d: DialogBranch) -> void:
 	v_box_container.visible = false
 	_d.selected.emit()
 	show_dialog(_d.dialog_items)
@@ -189,7 +189,7 @@ func show_dialog_button_indicator(_is_visible: bool) -> void:
 		label.text = "END"
 
 func start_timer() -> void:
-	if plain_text.length() <= 0 or rich_text_label.visible_characters - 1 >= plain_text.length() :
+	if plain_text.length() <= 0 or rich_text_label.visible_characters - 1 >= plain_text.length():
 		return
 	
 	timer.wait_time = text_speed

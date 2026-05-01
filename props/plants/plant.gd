@@ -9,4 +9,3 @@ func _ready() -> void:
 func take_damage(_hurt_box: HurtBox) -> void:
 	queue_free()
 	pass
-	

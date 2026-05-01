@@ -7,7 +7,7 @@ class_name EnemyStateStun extends EnemyState
 @export_category("AI")
 @export var next_state: EnemyState
 
-var _damage_position : Vector2
+var _damage_position: Vector2
 var _direction: Vector2
 var _animation_finished: bool = false
 
@@ -44,7 +44,7 @@ func physics(_delta: float) -> State:
 	
 func _on_enemy_damaged(hurt_box: HurtBox) -> void:
 	_damage_position = hurt_box.global_position
-	enemy_state_machine.changeState(self)
+	enemy_state_machine.changeState(self )
 	
 func _on_animation_finished(_a: String) -> void:
 	_animation_finished = true

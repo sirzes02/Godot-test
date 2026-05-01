@@ -20,7 +20,7 @@ func enter() -> void:
 	direction = player.direction
 	
 	if direction == Vector2.ZERO:
-		direction = player.cardinal_direction * -1 
+		direction = player.cardinal_direction * -1
 	
 	if dash_audio:
 		player.audio_stream_player_2d.stream = dash_audio

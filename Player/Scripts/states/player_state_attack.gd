@@ -16,7 +16,7 @@ var attacking: bool = false
 func enter() -> void:
 	player.updateAnimation("attack")
 	animation_attack.play("attack_" + player.animDirection())
-	animation_player.animation_finished.connect(end_attack )
+	animation_player.animation_finished.connect(end_attack)
 	
 	audio_stream_player_2d.stream = attack_sound
 	audio_stream_player_2d.pitch_scale = randf_range(0.9, 1.1)
@@ -31,7 +31,7 @@ func enter() -> void:
 	pass
 	
 func exit() -> void:
-	animation_player.animation_finished.disconnect(end_attack )
+	animation_player.animation_finished.disconnect(end_attack)
 	attacking = false
 	hurt_box.monitoring = false
 	pass

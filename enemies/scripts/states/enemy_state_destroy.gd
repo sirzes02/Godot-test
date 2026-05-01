@@ -9,7 +9,7 @@ const PICKUP = preload("res://items/item_pickup/item_pickup.tscn")
 @export_category("Item Drops")
 @export var drops: Array[DropData]
 
-var _damage_position : Vector2
+var _damage_position: Vector2
 var _direction: Vector2
 
 func init() -> void:
@@ -42,7 +42,7 @@ func physics(_delta: float) -> State:
 	
 func _on_enemy_destroyed(hurt_box: HurtBox) -> void:
 	_damage_position = hurt_box.global_position
-	enemy_state_machine.changeState(self)
+	enemy_state_machine.changeState(self )
 	
 func _on_animation_finished(_a: String) -> void:
 	enemy.queue_free()

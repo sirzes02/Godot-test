@@ -31,10 +31,10 @@ func open_door() -> void:
 		audio_stream_player_2d.stream = locked_audio
 	
 	audio_stream_player_2d.play()
-	pass	
+	pass
 
 func close_door() -> void:
-	animation_player.play("close_door" )
+	animation_player.play("close_door")
 	
 func set_state() -> void:
 	is_open = persistent_data_handler.value

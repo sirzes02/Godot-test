@@ -38,7 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("pause"):
 		get_viewport().set_input_as_handled()
-		hide_menu() 
+		hide_menu()
 
 func show_menu(items: Array[ItemData], dialog_triggered: bool = true) -> void:
 	if dialog_triggered:

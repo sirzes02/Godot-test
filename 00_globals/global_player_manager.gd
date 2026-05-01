@@ -32,7 +32,7 @@ func reward_xp(_xp: int) -> void:
 	check_for_level_advance()
 
 func check_for_level_advance() -> void:
-	if  player.level >= level_requirements.size():
+	if player.level >= level_requirements.size():
 		return
 	
 	if player.xp >= level_requirements[player.level]:

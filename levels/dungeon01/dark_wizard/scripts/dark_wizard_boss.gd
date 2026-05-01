@@ -54,14 +54,14 @@ func _ready() -> void:
 	teleport(0)
 	
 func _process(delta: float) -> void:
-	hand_01_up.position= hand_01.position
-	hand_01_up.frame= hand_01.frame + 4
-	hand_02_up.position= hand_02.position
-	hand_02_up.frame= hand_02.frame + 4
-	hand_01_side.position= hand_01.position
-	hand_01_side.frame= hand_01.frame + 8
-	hand_02_side.position= hand_02.position
-	hand_02_side.frame= hand_02.frame + 12
+	hand_01_up.position = hand_01.position
+	hand_01_up.frame = hand_01.frame + 4
+	hand_02_up.position = hand_02.position
+	hand_02_up.frame = hand_02.frame + 4
+	hand_01_side.position = hand_01.position
+	hand_01_side.frame = hand_01.frame + 8
+	hand_02_side.position = hand_02.position
+	hand_02_side.frame = hand_02.frame + 12
 	pass
 	
 func teleport(_location: int) -> void:
@@ -109,7 +109,7 @@ func idle() -> void:
 	
 	pass
 	
-func update_animations()-> void:
+func update_animations() -> void:
 	boss_node.scale = Vector2(1, 1)
 	hand_01.visible = false
 	hand_02.visible = false
@@ -129,7 +129,7 @@ func update_animations()-> void:
 	else:
 		cloak_animation_player.play("side")
 		hand_01_side.visible = true
-		hand_02_side.visible = true 
+		hand_02_side.visible = true
 		
 		if current_position == 1:
 			boss_node.scale = Vector2(-1, 1)
@@ -139,7 +139,7 @@ func update_animations()-> void:
 func energy_beam_attack() -> void:
 	var _b: Array[int]
 	
-	match  current_position:
+	match current_position:
 		0, 2:
 			if current_position == 0:
 				_b.append(0)

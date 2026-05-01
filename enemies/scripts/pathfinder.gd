@@ -47,7 +47,7 @@ func set_path() -> void:
 		if rays[i].is_colliding():
 			obstacles[i] += 4
 			obstacles[get_next_i(i)] += 1
-			obstacles[get_prev_i(i)] += 1 
+			obstacles[get_prev_i(i)] += 1
 			
 	if obstacles.max() == 0:
 		best_path = player_dir

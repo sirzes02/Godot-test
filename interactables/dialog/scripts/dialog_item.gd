@@ -20,7 +20,7 @@ func check_npc_data() -> void:
 		var p = self
 		var _checking: bool
 		
-		while  _checking:
+		while _checking:
 			p = p.get_parent()
 			
 			if p:

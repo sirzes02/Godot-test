@@ -1,9 +1,9 @@
 @tool
 class_name TreasureChest extends Node2D
 
-@export var item_data: ItemData: 
+@export var item_data: ItemData:
 	set = _set_item_data
-@export var quantity: int = 1: 
+@export var quantity: int = 1:
 	set = _set_quantity
 
 @onready var sprite_2d: Sprite2D = $ItemSprite

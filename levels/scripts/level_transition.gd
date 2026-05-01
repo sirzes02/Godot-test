@@ -3,7 +3,7 @@ class_name LevelTransition extends Area2D
 
 signal entered_from_here
 
-enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
+enum SIDE {LEFT, RIGHT, TOP, BOTTOM}
 
 @export_file("*.tscn") var level
 @export var target_transition_area: String = "LevelTransition"
@@ -38,7 +38,7 @@ func _ready() -> void:
 	
 	body_entered.connect(_player_entered)
 	
-	pass 
+	pass
 	
 func _player_entered(_p: Node2D) -> void:
 	LevelManager.load_new_level(level, target_transition_area, get_offset())

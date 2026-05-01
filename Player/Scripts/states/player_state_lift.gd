@@ -4,7 +4,7 @@ class_name State_Lift extends State
 
 @onready var carry: Node = $"../Carry"
 
-var start_animation_late: bool= false
+var start_animation_late: bool = false
 
 func enter() -> void:
 	player.updateAnimation("lift")

@@ -12,7 +12,7 @@ var og_throw_speed: float = 0
 @onready var explosion_sprite: Sprite2D = $"../ExplosionSprite"
 
 func _ready() -> void:
-	super()
+	super ()
 	og_throw_speed = throw_speed
 	hurt_box.damage = 0
 	animation_player.queue("explode")
@@ -21,7 +21,7 @@ func _ready() -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	super(delta)
+	super (delta)
 	explosion_sprite.position = object_sprite.position
 	pass
 
@@ -30,7 +30,7 @@ func _on_animation_changed(_old_name: String, _new_name: String) -> void:
 	pass
 	
 func player_interact() -> void:
-	super()
+	super ()
 	throw_speed = og_throw_speed
 	bounce_count = 0
 	pass
@@ -64,12 +64,12 @@ func did_damage() -> void:
 	pass
 
 func disable_collisions(_node: Node) -> void:
-	super(_node)
+	super (_node)
 	$"../HurtBox/CollisionShape2D".disabled = false
 	pass
 	
 func drop() -> void:
-	super()
+	super ()
 	
 	if animation_player.current_animation == "explode":
 		explosion_sprite.position = object_sprite.position

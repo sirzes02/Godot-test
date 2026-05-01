@@ -1,7 +1,7 @@
 class_name InventorySlotUI extends Button
 
-var slot_data: SlotData :
-	set = set_slot_data 
+var slot_data: SlotData:
+	set = set_slot_data
 var click_pos: Vector2 = Vector2.ZERO
 var dragging: bool = false
 var drag_texture: Control

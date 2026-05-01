@@ -42,7 +42,7 @@ func _ready() -> void:
 	PauseMenu.shown.connect(_on_show_pause)
 	PauseMenu.hidden.connect(_on_hide_pause)
 	
-	pass 
+	pass
 
 func update_hp(_hp: int, _max_hp: int) -> void:
 	update_max_hp(_max_hp)

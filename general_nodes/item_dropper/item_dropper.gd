@@ -31,7 +31,7 @@ func drop_item() -> void:
 	drop.item_data = item_data
 	add_child(drop)
 	drop.picked_up.connect(_on_drop_pickup)
-	audio_stream_player.play() 
+	audio_stream_player.play()
 
 func _on_drop_pickup() -> void:
 	drop_collected.emit()

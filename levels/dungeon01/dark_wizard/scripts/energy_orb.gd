@@ -38,5 +38,4 @@ func play_audio(_a: AudioStream) -> void:
 	pass
 
 func destroy() -> void:
-	
 	queue_free()

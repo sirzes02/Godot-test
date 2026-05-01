@@ -33,7 +33,7 @@ func check_mouth_open(l: String) -> void:
 		
 	if mounth_open_frames == 0:
 		if open_mounth:
-			open_mounth = false 
+			open_mounth = false
 			audio_stream_player.pitch_scale = randf_range(audio_pitch_base - 0.08, audio_pitch_base + 0.02)
 			audio_stream_player.play()
 	pass

@@ -61,7 +61,7 @@ func update_direction(target_position: Vector2) -> void:
 	else:
 		sprite_2d.flip_h = false
 	
-func update_direction_name()-> void:
+func update_direction_name() -> void:
 	var threshold: float = 0.5
 	
 	if direction.y < -threshold:

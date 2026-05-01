@@ -6,7 +6,7 @@ var current_state: State
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
-	pass 
+	pass
 
 func _process(delta: float) -> void:
 	changeState(current_state.process(delta))

@@ -24,8 +24,8 @@ func advance_quest() -> void:
 	if linked_quest == null:
 		return
 	
-	await  get_tree().process_frame
-	advance.emit( )
+	await get_tree().process_frame
+	advance.emit()
 	var _title: String = linked_quest.title
 	var _step: String = get_step()
 	

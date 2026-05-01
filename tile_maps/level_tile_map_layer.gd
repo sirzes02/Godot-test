@@ -1,6 +1,6 @@
 class_name LevelTileMapLayer extends TileMapLayer
 
-@export var tile_size: float = 32 
+@export var tile_size: float = 32
 
 func _ready() -> void:
 	LevelManager.changeTileMapBounds(getTileMapBounds())

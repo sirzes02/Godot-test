@@ -72,7 +72,7 @@ func _on_player_enter() -> State:
 	if enemy_state_machine.current_state is EnemyStateStun or enemy_state_machine.current_state is EnemyStateDestroy:
 		return
 	
-	enemy_state_machine.changeState(self)
+	enemy_state_machine.changeState(self )
 	return null
 	
 func _on_player_exit() -> State:

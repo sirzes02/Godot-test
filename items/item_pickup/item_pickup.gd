@@ -22,7 +22,7 @@ func _ready() -> void:
 	area_2d.body_entered.connect(_on_body_entered)
 	
 func _physics_process(delta: float) -> void:
-	var collision_info =move_and_collide(velocity * delta)
+	var collision_info = move_and_collide(velocity * delta)
 	
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())

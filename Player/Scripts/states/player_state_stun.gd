@@ -47,7 +47,7 @@ func _player_damaged(_hurt_box: HurtBox) -> void:
 	hurt_box = _hurt_box
 	
 	if player_state_machine.current_state != death:
-		player_state_machine.changeState(self)
+		player_state_machine.changeState(self )
 	
 	pass
 	

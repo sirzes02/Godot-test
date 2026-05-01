@@ -38,13 +38,13 @@ signal player_damaged(hurt_box: HurtBox)
 
 func _ready() -> void:
 	PlayerManager.player = self
-	state_machine.initialize(self)
+	state_machine.initialize(self )
 	hit_box.damaged.connect(_take_damage)
 	update_hp(99)
 	update_damage_values()
 	PlayerManager.player_leveled_up.connect(_on_player_level_up)
 	PlayerManager.INVENTORY_DATA.equipment_changed.connect(_on_equipment_changed)
-	pass 
+	pass
 
 func _process(_delta: float) -> void:
 	direction = Vector2(
@@ -137,12 +137,12 @@ func _on_equipment_changed() -> void:
 	update_damage_values()
 	defense_bonus = PlayerManager.INVENTORY_DATA.get_defense_bonus()
 
-func _set_arrow_count(value: int)-> void:
+func _set_arrow_count(value: int) -> void:
 	arrow_count = value
 	PlayerHud.update_arrow_count(value)
 	pass
 	
-func _set_bomb_count(value: int)-> void:
+func _set_bomb_count(value: int) -> void:
 	bomb_count = value
 	PlayerHud.update_bomb_count(value)
 	pass

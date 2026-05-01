@@ -5,7 +5,7 @@ class_name DialogText extends DialogItem
 @export_multiline var text: String = "Placeholder text...":
 	set = _set_text
 
-func _set_text(value:  String) -> void:
+func _set_text(value: String) -> void:
 	text = value
 	
 	if Engine.is_editor_hint():
@@ -13,6 +13,6 @@ func _set_text(value:  String) -> void:
 			_set_editor_display()
 
 func _set_editor_display() -> void:
-	example_dialog.set_dialog_text(self)
+	example_dialog.set_dialog_text(self )
 	example_dialog.rich_text_label.visible_characters = -1
 	pass

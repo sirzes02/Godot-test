@@ -1,0 +1,139 @@
+[gd_scene format=4 uid="uid://bu2u4uyvxi1ch"]
+
+[ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/scripts/level.gd" id="1_0nife"]
+[ext_resource type="PackedScene" uid="uid://bmspytvkeyemg" path="res://tile_maps/grass-tiles-01.tscn" id="2_5q8x3"]
+[ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="3_5q8x3"]
+[ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn.tscn" id="3_cwul1"]
+[ext_resource type="PackedScene" uid="uid://dvhdmorcq4463" path="res://npc/npc.tscn" id="5_6gutc"]
+[ext_resource type="Resource" uid="uid://v30ayv8qjfae" path="res://npc/00_npcs/npc_02.tres" id="6_3g5lw"]
+[ext_resource type="PackedScene" uid="uid://k14lanhf3no4" path="res://npc/npc_behavior_wander.tscn" id="7_3g5lw"]
+[ext_resource type="PackedScene" uid="uid://caduja2rgl2gk" path="res://interactables/dialog/dialog_interaction.tscn" id="8_qndrf"]
+[ext_resource type="Script" uid="uid://lq61q3eoevei" path="res://interactables/dialog/scripts/dialog_cutscene.gd" id="9_drfer"]
+[ext_resource type="Script" uid="uid://cdkb66e1trluv" path="res://interactables/dialog/scripts/dialog_text.gd" id="9_s814m"]
+[ext_resource type="Script" uid="uid://dawwscas7l1k3" path="res://interactables/dialog/scripts/cutscene_action_animation.gd" id="10_drfer"]
+
+[sub_resource type="Animation" id="Animation_2d4mg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_drfer"]
+resource_name = "fade_to_black"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_fqgqj"]
+resource_name = "fade_to_normal"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2d4mg"]
+_data = {
+&"RESET": SubResource("Animation_2d4mg"),
+&"fade_to_black": SubResource("Animation_drfer"),
+&"fade_to_normal": SubResource("Animation_fqgqj")
+}
+
+[node name="04" type="Node2D" unique_id=566638916]
+script = ExtResource("1_0nife")
+
+[node name="grass-tiles-01" parent="." unique_id=852794813 instance=ExtResource("2_5q8x3")]
+tile_map_data = PackedByteArray("AAAAAAEAAAADAAYAAAAAAAIAAAAOAAQAAAAAAAMAAAAOAAUAAAAAAAQAAAAOAAUAAAAAAAUAAAAOAAYAAAAAAAYAAAAOAAcAAAAAAAcAAAAKAAQAAAABAAAAAAADAAUAAAABAAEAAAADAAYAAAABAAIAAAABAAAAAAABAAMAAAAFAAMAAAABAAQAAAABAAIAAAABAAUAAAACAAIAAAABAAYAAAABAAAAAAABAAcAAAALAAQAAAACAAAAAAADAAUAAAACAAEAAAADAAYAAAACAAIAAAABAAAAAAACAAMAAAAHAAAAAAACAAQAAAAEAAEAAAACAAUAAAAFAAIAAAACAAYAAAABAAAAAAACAAcAAAAMAAQAAAADAAAAAAADAAUAAAADAAEAAAADAAYAAAADAAIAAAABAAAAAAADAAMAAAADAAEAAAADAAQAAAADAAIAAAADAAUAAAAGAAMAAAADAAYAAAABAAAAAAADAAcAAAAMAAQAAAAEAAAAAAADAAUAAAAEAAEAAAADAAYAAAAEAAIAAAABAAEAAAAEAAMAAAABAAAAAAAEAAQAAAACAAEAAAAEAAUAAAAGAAMAAAAEAAYAAAABAAAAAAAEAAcAAAAMAAQAAAAFAAAAAAADAAUAAAAFAAEAAAADAAYAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAADAAEAAAAFAAUAAAAGAAMAAAAFAAYAAAABAAAAAAAFAAcAAAAMAAQAAAAGAAAAAAADAAUAAAAGAAEAAAADAAYAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAGAAQAAAAFAAAAAAAGAAUAAAAHAAIAAAAGAAYAAAABAAAAAAAGAAcAAAAMAAQAAAAHAAAAAAADAAUAAAAHAAEAAAADAAYAAAAHAAIAAAABAAAAAAAHAAMAAAABAAEAAAAHAAQAAAAGAAMAAAAHAAUAAAACAAIAAAAHAAYAAAABAAAAAAAHAAcAAAAMAAQAAAAIAAAAAAADAAUAAAAIAAEAAAADAAYAAAAIAAIAAAABAAAAAAAIAAMAAAAFAAAAAAAIAAQAAAAHAAIAAAAIAAUAAAADAAIAAAAIAAYAAAABAAAAAAAIAAcAAAAMAAQAAAAJAAAAAAADAAUAAAAJAAEAAAADAAYAAAAJAAIAAAABAAAAAAAJAAMAAAAHAAMAAAAJAAQAAAADAAIAAAAJAAUAAAABAAAAAAAJAAYAAAABAAAAAAAJAAcAAAANAAQAAAAKAAAAAAADAAUAAAAKAAEAAAADAAYAAAAKAAIAAAACAAEAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAAKAAUAAAABAAAAAAAKAAYAAAABAAAAAAAKAAcAAAAOAAQAAAALAAAAAAADAAUAAAALAAEAAAADAAYAAAALAAIAAAAKAAQAAAALAAMAAAAKAAcAAAALAAQAAAACAAMAAAALAAUAAAACAAEAAAALAAYAAAAKAAQAAAALAAcAAAAKAAUAAAAAAAAAAAADAAUAAAAAAP//AAACAAQAAAABAP//AAACAAQAAAACAP//AAACAAQAAAADAP//AAACAAQAAAAEAP//AAACAAQAAAAFAP//AAACAAQAAAAGAP//AAACAAQAAAAHAP//AAACAAQAAAAIAP//AAACAAQAAAAJAP//AAACAAQAAAAKAP//AAACAAQAAAALAP//AAACAAQAAAD/////AAACAAQAAAD//wAAAAACAAUAAAD//wEAAAACAAYAAAD+/wIAAAAKAAQAAAD+/wMAAAAKAAUAAAD+////AAADAAQAAAD+/wAAAAADAAUAAAD+/wEAAAADAAYAAAD+/wQAAAAKAAUAAAD+/wUAAAAKAAYAAAD+/wYAAAAKAAcAAAD//wYAAAAMAAcAAAD//wUAAAAMAAYAAAD//wIAAAAMAAQAAAD//wMAAAAMAAUAAAD//wQAAAAMAAUAAAD//wcAAAADAAMAAAD+/wcAAAADAAMAAAANAP//AAADAAQAAAANAAAAAAADAAUAAAANAAEAAAADAAYAAAAMAP//AAADAAQAAAAMAAAAAAADAAUAAAAMAAEAAAADAAYAAAAMAAIAAAANAAQAAAANAAIAAAAOAAQAAAAMAAMAAAANAAcAAAANAAMAAAAOAAcAAAAMAAYAAAANAAQAAAANAAYAAAAOAAQAAAANAAcAAAAOAAUAAAAMAAcAAAAMAAUAAAAMAAQAAAAMAAUAAAAMAAUAAAAMAAUAAAANAAUAAAAMAAUAAAANAAQAAAAMAAUAAAA=")
+
+[node name="PlayerSpawn" parent="." unique_id=287581452 instance=ExtResource("3_cwul1")]
+position = Vector2(300, 110)
+
+[node name="LevelTransition" parent="." unique_id=1627999731 instance=ExtResource("3_5q8x3")]
+position = Vector2(448, 160)
+level = "uid://i0eupp3rpy7u"
+target_transition_area = "LevelTransition3"
+center_player = true
+side = 1
+
+[node name="NPC" parent="." unique_id=278842197 instance=ExtResource("5_6gutc")]
+position = Vector2(211, 122)
+npc_resource = ExtResource("6_3g5lw")
+
+[node name="NpcWanderBehavior" parent="NPC" unique_id=1340077773 instance=ExtResource("7_3g5lw")]
+
+[node name="DialogInteraction" parent="NPC" unique_id=1316307863 instance=ExtResource("8_qndrf")]
+
+[node name="DialogCutscene" type="Node" parent="NPC/DialogInteraction" unique_id=1172395392]
+script = ExtResource("9_drfer")
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://lq61q3eoevei"
+
+[node name="CutsceneActionAnimation" type="Node" parent="NPC/DialogInteraction/DialogCutscene" unique_id=406647389 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("10_drfer")
+animation_player = NodePath("../../../../AnimationPlayer")
+animation_name = "fade_to_black"
+metadata/_custom_type_script = "uid://dawwscas7l1k3"
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1830891047]
+script = ExtResource("9_s814m")
+text = "Hey! Who turn off the lights?"
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction" unique_id=1318817124]
+script = ExtResource("9_s814m")
+text = "[wave]It was not me![/wave]"
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogCutscene2" type="Node" parent="NPC/DialogInteraction" unique_id=1252019249]
+script = ExtResource("9_drfer")
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://lq61q3eoevei"
+
+[node name="CutsceneActionAnimation" type="Node" parent="NPC/DialogInteraction/DialogCutscene2" unique_id=1428102150 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("10_drfer")
+animation_player = NodePath("../../../../AnimationPlayer")
+animation_name = "fade_to_normal"
+metadata/_custom_type_script = "uid://dawwscas7l1k3"
+
+[node name="DialogText3" type="Node" parent="NPC/DialogInteraction" unique_id=1446751940]
+script = ExtResource("9_s814m")
+text = "
+Oh nice! the lights are back!"
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1271421254]
+libraries/ = SubResource("AnimationLibrary_2d4mg")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2044932986]
+energy = 0.0
+blend_mode = 1

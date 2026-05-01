@@ -8,6 +8,7 @@ signal letter_added(letter: String)
 var is_active: bool = false
 var text_in_progress: bool = false
 var waiting_for_choise: bool = false
+var watching_cutscene: bool = false
 
 var text_speed: float = 0.02
 var text_length: int = 0
@@ -38,7 +39,7 @@ func _ready() -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not is_active:
+	if not is_active or watching_cutscene:
 		return
 		
 	if (
@@ -55,18 +56,28 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		elif waiting_for_choise:
 			return
-		
-		dialog_item_index += 1
-		
-		if dialog_item_index < dialog_items.size():
-			start_dialog()
-		else: 
-			hide_dialog()
+			
+		advance_dialog()
 	pass
 	
+func advance_dialog() -> void:
+	dialog_item_index += 1
+	
+	if dialog_item_index < dialog_items.size():
+		start_dialog()
+	else: 
+		hide_dialog()
+	
+	pass 
+
 func show_dialog(_items: Array[DialogItem]) -> void:
 	is_active = true
-	dialog_ui.visible = true
+	
+	if _items[0] is DialogCutscene:
+		dialog_ui.visible = false
+	else:
+		dialog_ui.visible = true
+		
 	dialog_ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	dialog_items = _items
 	dialog_item_index = 0
@@ -98,10 +109,24 @@ func start_dialog() -> void:
 		set_dialog_text(_d as DialogText)
 	elif _d is DialogChoice:
 		set_dialog_choice(_d as DialogChoice)
+	elif _d is DialogCutscene:
+		start_dialog_cutscene(_d as DialogCutscene)
 	
 	start_timer()
 	pass
-	
+
+func start_dialog_cutscene(_d: DialogCutscene) -> void:
+	watching_cutscene = true
+	_d.play()
+	dialog_ui.visible = false
+	v_box_container.visible = false
+	await _d.finished
+	watching_cutscene = false
+	dialog_ui.visible = true
+	v_box_container.visible = true
+	advance_dialog()
+	pass
+
 func set_dialog_text(_d: DialogText) -> void:
 	rich_text_label.text = _d.text
 	v_box_container.visible = false
@@ -163,6 +188,9 @@ func show_dialog_button_indicator(_is_visible: bool) -> void:
 		label.text = "END"
 
 func start_timer() -> void:
+	if plain_text.length() <= 0:
+		return
+	
 	timer.wait_time = text_speed
 	var _char = plain_text[rich_text_label.visible_characters - 1]
 	

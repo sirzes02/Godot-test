@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/scripts/level.gd" id="1_0nife"]
 [ext_resource type="PackedScene" uid="uid://bmspytvkeyemg" path="res://tile_maps/grass-tiles-01.tscn" id="2_5q8x3"]
+[ext_resource type="AudioStream" uid="uid://3yf4euq1it8d" path="res://levels/music/example_music_02.ogg" id="2_b6acy"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition.tscn" id="3_5q8x3"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn.tscn" id="3_cwul1"]
+[ext_resource type="PackedScene" uid="uid://b61oyv8ujx6cr" path="res://general_nodes/area_trigger/area_trigger.tscn" id="4_1xggc"]
 [ext_resource type="PackedScene" uid="uid://dvhdmorcq4463" path="res://npc/npc.tscn" id="5_6gutc"]
 [ext_resource type="Resource" uid="uid://v30ayv8qjfae" path="res://npc/00_npcs/npc_02.tres" id="6_3g5lw"]
 [ext_resource type="PackedScene" uid="uid://k14lanhf3no4" path="res://npc/npc_behavior_wander.tscn" id="7_3g5lw"]
@@ -12,9 +14,14 @@
 [ext_resource type="Script" uid="uid://cdkb66e1trluv" path="res://interactables/dialog/scripts/dialog_text.gd" id="9_s814m"]
 [ext_resource type="Script" uid="uid://dawwscas7l1k3" path="res://interactables/dialog/scripts/cutscene_action_animation.gd" id="10_drfer"]
 [ext_resource type="Script" uid="uid://c1tj1j1nxrwvn" path="res://interactables/dialog/scripts/cutscene_action_move.gd" id="12_2d4mg"]
+[ext_resource type="Script" uid="uid://dhamvdjmnvxvu" path="res://interactables/dialog/scripts/cutscene_action_music.gd" id="12_5ties"]
 [ext_resource type="Script" uid="uid://cbk6v8kfx0ak8" path="res://interactables/dialog/scripts/cutscene_action_camera.gd" id="12_wfs2b"]
 [ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="13_fqgqj"]
+[ext_resource type="AudioStream" uid="uid://dbof075x47wc6" path="res://levels/music/example_music_03.ogg" id="13_qecqx"]
 [ext_resource type="Script" uid="uid://bvcsj23l4w1ha" path="res://interactables/dialog/scripts/cutscene_action_player.gd" id="14_6mgy7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xggc"]
+size = Vector2(194, 150)
 
 [sub_resource type="Animation" id="Animation_2d4mg"]
 length = 0.001
@@ -72,12 +79,103 @@ _data = {
 
 [node name="04" type="Node2D" unique_id=566638916]
 script = ExtResource("1_0nife")
+music = ExtResource("2_b6acy")
 
 [node name="grass-tiles-01" parent="." unique_id=852794813 instance=ExtResource("2_5q8x3")]
 tile_map_data = PackedByteArray("AAAAAAEAAAADAAYAAAAAAAIAAAAOAAQAAAAAAAMAAAAOAAUAAAAAAAQAAAAOAAUAAAAAAAUAAAAOAAYAAAAAAAYAAAAOAAcAAAAAAAcAAAAKAAQAAAABAAAAAAADAAUAAAABAAEAAAADAAYAAAABAAIAAAABAAAAAAABAAMAAAAFAAMAAAABAAQAAAABAAIAAAABAAUAAAACAAIAAAABAAYAAAABAAAAAAABAAcAAAALAAQAAAACAAAAAAADAAUAAAACAAEAAAADAAYAAAACAAIAAAABAAAAAAACAAMAAAAHAAAAAAACAAQAAAAEAAEAAAACAAUAAAAFAAIAAAACAAYAAAABAAAAAAACAAcAAAAMAAQAAAADAAAAAAADAAUAAAADAAEAAAADAAYAAAADAAIAAAABAAAAAAADAAMAAAADAAEAAAADAAQAAAADAAIAAAADAAUAAAAGAAMAAAADAAYAAAABAAAAAAADAAcAAAAMAAQAAAAEAAAAAAADAAUAAAAEAAEAAAADAAYAAAAEAAIAAAABAAEAAAAEAAMAAAABAAAAAAAEAAQAAAACAAEAAAAEAAUAAAAGAAMAAAAEAAYAAAABAAAAAAAEAAcAAAAMAAQAAAAFAAAAAAADAAUAAAAFAAEAAAADAAYAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAADAAEAAAAFAAUAAAAGAAMAAAAFAAYAAAABAAAAAAAFAAcAAAAMAAQAAAAGAAAAAAADAAUAAAAGAAEAAAADAAYAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAGAAQAAAAFAAAAAAAGAAUAAAAHAAIAAAAGAAYAAAABAAAAAAAGAAcAAAAMAAQAAAAHAAAAAAADAAUAAAAHAAEAAAADAAYAAAAHAAIAAAABAAAAAAAHAAMAAAABAAEAAAAHAAQAAAAGAAMAAAAHAAUAAAACAAIAAAAHAAYAAAABAAAAAAAHAAcAAAAMAAQAAAAIAAAAAAADAAUAAAAIAAEAAAADAAYAAAAIAAIAAAABAAAAAAAIAAMAAAAFAAAAAAAIAAQAAAAHAAIAAAAIAAUAAAADAAIAAAAIAAYAAAABAAAAAAAIAAcAAAAMAAQAAAAJAAAAAAADAAUAAAAJAAEAAAADAAYAAAAJAAIAAAABAAAAAAAJAAMAAAAHAAMAAAAJAAQAAAADAAIAAAAJAAUAAAABAAAAAAAJAAYAAAABAAAAAAAJAAcAAAANAAQAAAAKAAAAAAADAAUAAAAKAAEAAAADAAYAAAAKAAIAAAACAAEAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAAKAAUAAAABAAAAAAAKAAYAAAABAAAAAAAKAAcAAAAOAAQAAAALAAAAAAADAAUAAAALAAEAAAADAAYAAAALAAIAAAAKAAQAAAALAAMAAAAKAAcAAAALAAQAAAACAAMAAAALAAUAAAACAAEAAAALAAYAAAAKAAQAAAALAAcAAAAKAAUAAAAAAAAAAAADAAUAAAAAAP//AAACAAQAAAABAP//AAACAAQAAAACAP//AAACAAQAAAADAP//AAACAAQAAAAEAP//AAACAAQAAAAFAP//AAACAAQAAAAGAP//AAACAAQAAAAHAP//AAACAAQAAAAIAP//AAACAAQAAAAJAP//AAACAAQAAAAKAP//AAACAAQAAAALAP//AAACAAQAAAD/////AAACAAQAAAD//wAAAAACAAUAAAD//wEAAAACAAYAAAD+/wIAAAAKAAQAAAD+/wMAAAAKAAUAAAD+////AAADAAQAAAD+/wAAAAADAAUAAAD+/wEAAAADAAYAAAD+/wQAAAAKAAUAAAD+/wUAAAAKAAYAAAD+/wYAAAAKAAcAAAD//wYAAAAMAAcAAAD//wUAAAAMAAYAAAD//wIAAAAMAAQAAAD//wMAAAAMAAUAAAD//wQAAAAMAAUAAAD//wcAAAADAAMAAAD+/wcAAAADAAMAAAANAP//AAADAAQAAAANAAAAAAADAAUAAAANAAEAAAADAAYAAAAMAP//AAADAAQAAAAMAAAAAAADAAUAAAAMAAEAAAADAAYAAAAMAAIAAAANAAQAAAANAAIAAAAOAAQAAAAMAAMAAAANAAcAAAANAAMAAAAOAAcAAAAMAAYAAAANAAQAAAANAAYAAAAOAAQAAAANAAcAAAAOAAUAAAAMAAcAAAAMAAUAAAAMAAQAAAAMAAUAAAAMAAUAAAAMAAUAAAANAAUAAAAMAAUAAAANAAQAAAAMAAUAAAA=")
 
+[node name="AreaTrigger" parent="." unique_id=1332076214 instance=ExtResource("4_1xggc")]
+
+[node name="DialogInteraction" parent="AreaTrigger" unique_id=1316307863 instance=ExtResource("8_qndrf")]
+position = Vector2(211, 122)
+
+[node name="DialogCutscene" type="Node" parent="AreaTrigger/DialogInteraction" unique_id=1172395392]
+script = ExtResource("9_drfer")
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://lq61q3eoevei"
+
+[node name="CutsceneActionAnimation" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene" unique_id=1759338158 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("10_drfer")
+animation_player = NodePath("../../../../AnimationPlayer")
+animation_name = "fade_to_black"
+metadata/_custom_type_script = "uid://dawwscas7l1k3"
+
+[node name="DialogText" type="Node" parent="AreaTrigger/DialogInteraction" unique_id=1830891047]
+script = ExtResource("9_s814m")
+text = "Hey! Who turn off the lights?"
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogCutscene3" type="Node" parent="AreaTrigger/DialogInteraction" unique_id=939094821]
+script = ExtResource("9_drfer")
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://lq61q3eoevei"
+
+[node name="CutsceneActionMusic" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene3" unique_id=39283731]
+script = ExtResource("12_5ties")
+track = ExtResource("13_qecqx")
+metadata/_custom_type_script = "uid://dhamvdjmnvxvu"
+
+[node name="CutsceneActionCamera" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene3" unique_id=54155224]
+position = Vector2(-12, 131)
+script = ExtResource("12_wfs2b")
+metadata/_custom_type_script = "uid://cbk6v8kfx0ak8"
+
+[node name="CutsceneActionPlayer" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene3" unique_id=595539967]
+position = Vector2(62, 195)
+script = ExtResource("14_6mgy7")
+finish_direction = "right"
+timing_method = 1
+metadata/_custom_type_script = "uid://bvcsj23l4w1ha"
+
+[node name="CutsceneActionMove" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene3" unique_id=247509124 node_paths=PackedStringArray("object_to_move")]
+position = Vector2(161, 86)
+script = ExtResource("12_2d4mg")
+object_to_move = NodePath("../../../../NPC")
+metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
+
+[node name="CutsceneActionMove2" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene3" unique_id=575342414 node_paths=PackedStringArray("object_to_move")]
+position = Vector2(178, 196)
+script = ExtResource("12_2d4mg")
+object_to_move = NodePath("../../../../NPC")
+metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
+
+[node name="CutsceneActionMove3" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene3" unique_id=1331517410 node_paths=PackedStringArray("object_to_move")]
+position = Vector2(388, 161)
+script = ExtResource("12_2d4mg")
+object_to_move = NodePath("../../../../Pot")
+metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
+
+[node name="DialogText2" type="Node" parent="AreaTrigger/DialogInteraction" unique_id=1318817124]
+script = ExtResource("9_s814m")
+text = "[wave]It was not me![/wave]"
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="DialogCutscene2" type="Node" parent="AreaTrigger/DialogInteraction" unique_id=1252019249]
+script = ExtResource("9_drfer")
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://lq61q3eoevei"
+
+[node name="CutsceneActionAnimation" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene2" unique_id=1939370260 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("10_drfer")
+animation_player = NodePath("../../../../AnimationPlayer")
+animation_name = "fade_to_normal"
+metadata/_custom_type_script = "uid://dawwscas7l1k3"
+
+[node name="DialogText3" type="Node" parent="AreaTrigger/DialogInteraction" unique_id=1446751940]
+script = ExtResource("9_s814m")
+text = "
+Oh nice! the lights are back!"
+npc_info = ExtResource("6_3g5lw")
+metadata/_custom_type_script = "uid://cdkb66e1trluv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigger" unique_id=2025029000]
+position = Vector2(145, 144)
+shape = SubResource("RectangleShape2D_1xggc")
+
 [node name="PlayerSpawn" parent="." unique_id=287581452 instance=ExtResource("3_cwul1")]
-position = Vector2(300, 110)
+position = Vector2(360, 184)
 
 [node name="LevelTransition" parent="." unique_id=1627999731 instance=ExtResource("3_5q8x3")]
 position = Vector2(448, 160)
@@ -91,84 +189,6 @@ position = Vector2(211, 122)
 npc_resource = ExtResource("6_3g5lw")
 
 [node name="NpcWanderBehavior" parent="NPC" unique_id=1340077773 instance=ExtResource("7_3g5lw")]
-
-[node name="DialogInteraction" parent="NPC" unique_id=1316307863 instance=ExtResource("8_qndrf")]
-
-[node name="DialogCutscene" type="Node" parent="NPC/DialogInteraction" unique_id=1172395392]
-script = ExtResource("9_drfer")
-npc_info = ExtResource("6_3g5lw")
-metadata/_custom_type_script = "uid://lq61q3eoevei"
-
-[node name="CutsceneActionAnimation" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene" unique_id=1759338158 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("10_drfer")
-animation_player = NodePath("../../../../AnimationPlayer")
-animation_name = "fade_to_black"
-metadata/_custom_type_script = "uid://dawwscas7l1k3"
-
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1830891047]
-script = ExtResource("9_s814m")
-text = "Hey! Who turn off the lights?"
-npc_info = ExtResource("6_3g5lw")
-metadata/_custom_type_script = "uid://cdkb66e1trluv"
-
-[node name="DialogCutscene3" type="Node" parent="NPC/DialogInteraction" unique_id=939094821]
-script = ExtResource("9_drfer")
-npc_info = ExtResource("6_3g5lw")
-metadata/_custom_type_script = "uid://lq61q3eoevei"
-
-[node name="CutsceneActionCamera" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=54155224]
-position = Vector2(-12, 131)
-script = ExtResource("12_wfs2b")
-metadata/_custom_type_script = "uid://cbk6v8kfx0ak8"
-
-[node name="CutsceneActionPlayer" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=595539967]
-position = Vector2(62, 195)
-script = ExtResource("14_6mgy7")
-finish_direction = "right"
-timing_method = 1
-metadata/_custom_type_script = "uid://bvcsj23l4w1ha"
-
-[node name="CutsceneActionMove" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=247509124 node_paths=PackedStringArray("object_to_move")]
-position = Vector2(161, 86)
-script = ExtResource("12_2d4mg")
-object_to_move = NodePath("../../..")
-metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
-
-[node name="CutsceneActionMove2" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=575342414 node_paths=PackedStringArray("object_to_move")]
-position = Vector2(178, 196)
-script = ExtResource("12_2d4mg")
-object_to_move = NodePath("../../..")
-metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
-
-[node name="CutsceneActionMove3" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=1331517410 node_paths=PackedStringArray("object_to_move")]
-position = Vector2(388, 161)
-script = ExtResource("12_2d4mg")
-object_to_move = NodePath("../../../../Pot")
-metadata/_custom_type_script = "uid://c1tj1j1nxrwvn"
-
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction" unique_id=1318817124]
-script = ExtResource("9_s814m")
-text = "[wave]It was not me![/wave]"
-npc_info = ExtResource("6_3g5lw")
-metadata/_custom_type_script = "uid://cdkb66e1trluv"
-
-[node name="DialogCutscene2" type="Node" parent="NPC/DialogInteraction" unique_id=1252019249]
-script = ExtResource("9_drfer")
-npc_info = ExtResource("6_3g5lw")
-metadata/_custom_type_script = "uid://lq61q3eoevei"
-
-[node name="CutsceneActionAnimation" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene2" unique_id=1939370260 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("10_drfer")
-animation_player = NodePath("../../../../AnimationPlayer")
-animation_name = "fade_to_normal"
-metadata/_custom_type_script = "uid://dawwscas7l1k3"
-
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction" unique_id=1446751940]
-script = ExtResource("9_s814m")
-text = "
-Oh nice! the lights are back!"
-npc_info = ExtResource("6_3g5lw")
-metadata/_custom_type_script = "uid://cdkb66e1trluv"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1271421254]
 libraries/ = SubResource("AnimationLibrary_2d4mg")

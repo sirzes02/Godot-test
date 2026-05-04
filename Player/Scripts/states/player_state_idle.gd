@@ -5,7 +5,7 @@ class_name State_Idle extends State
 @onready var dash: State = $"../Dash"
 
 func enter() -> void:
-	player.updateAnimation("idle")
+	player.update_animation("idle")
 	pass
 	
 func exit() -> void:

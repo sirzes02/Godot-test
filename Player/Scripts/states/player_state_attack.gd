@@ -14,8 +14,8 @@ var attacking: bool = false
 @onready var hurt_box: HurtBox = %AttackHurtBox
 
 func enter() -> void:
-	player.updateAnimation("attack")
-	animation_attack.play("attack_" + player.animDirection())
+	player.update_animation("attack")
+	animation_attack.play("attack_" + player.anim_direction())
 	animation_player.animation_finished.connect(end_attack)
 	
 	audio_stream_player_2d.stream = attack_sound

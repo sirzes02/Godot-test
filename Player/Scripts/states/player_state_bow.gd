@@ -1,4 +1,4 @@
-class_name StateBow extends State
+class_name State_Bow extends State
 
 const ARROW = preload("uid://ddfutvj84jcg")
 
@@ -11,7 +11,7 @@ func _ready() -> void:
 	pass
 
 func enter() -> void:
-	player.updateAnimation("bow")
+	player.update_animation("bow")
 	player.animation_player.animation_finished.connect(_on_animation_finished)
 	direction = player.cardinal_direction
 	

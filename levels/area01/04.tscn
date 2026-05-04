@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c1tj1j1nxrwvn" path="res://interactables/dialog/scripts/cutscene_action_move.gd" id="12_2d4mg"]
 [ext_resource type="Script" uid="uid://cbk6v8kfx0ak8" path="res://interactables/dialog/scripts/cutscene_action_camera.gd" id="12_wfs2b"]
 [ext_resource type="PackedScene" uid="uid://xtl5m8vtdlsl" path="res://props/pot/pot.tscn" id="13_fqgqj"]
+[ext_resource type="Script" uid="uid://bvcsj23l4w1ha" path="res://interactables/dialog/scripts/cutscene_action_player.gd" id="14_6mgy7"]
 
 [sub_resource type="Animation" id="Animation_2d4mg"]
 length = 0.001
@@ -119,6 +120,13 @@ metadata/_custom_type_script = "uid://lq61q3eoevei"
 position = Vector2(-12, 131)
 script = ExtResource("12_wfs2b")
 metadata/_custom_type_script = "uid://cbk6v8kfx0ak8"
+
+[node name="CutsceneActionPlayer" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=595539967]
+position = Vector2(62, 195)
+script = ExtResource("14_6mgy7")
+finish_direction = "right"
+timing_method = 1
+metadata/_custom_type_script = "uid://bvcsj23l4w1ha"
 
 [node name="CutsceneActionMove" type="Node2D" parent="NPC/DialogInteraction/DialogCutscene3" unique_id=247509124 node_paths=PackedStringArray("object_to_move")]
 position = Vector2(161, 86)

@@ -54,9 +54,9 @@ func process(_delta: float) -> State:
 	if not is_attacking:
 		if player.direction == Vector2.ZERO:
 			walking = false
-			player.updateAnimation("charge")
-		elif player.setDirection() or not walking:
-			player.updateAnimation("charge_walk")
+			player.update_animation("charge")
+		elif player.set_direction() or not walking:
+			player.update_animation("charge_walk")
 			pass
 	
 	player.velocity = player.direction * move_speed

@@ -40,7 +40,7 @@ func init() -> void:
 	grapple_hurt_box.monitoring = false
 
 func enter() -> void:
-	player.updateAnimation("idle")
+	player.update_animation("idle")
 	grapple_hook.visible = true
 	grapple_hurt_box.monitoring = true
 	set_grapple_position()

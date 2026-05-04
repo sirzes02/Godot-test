@@ -1,4 +1,4 @@
-class_name StateDash extends State
+class_name State_Dash extends State
 
 @export var move_speed: float = 200.0
 @export var effect_delay: float = 0.1
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func enter() -> void:
 	player.invulnerable = true
-	player.updateAnimation("dash")
+	player.update_animation("dash")
 	player.animation_player.animation_finished.connect(_on_animation_finished)
 	direction = player.direction
 	

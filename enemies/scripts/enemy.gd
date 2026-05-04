@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
-func setDirection(_new_direction: Vector2) -> bool:
+func set_direction(_new_direction: Vector2) -> bool:
 	direction = _new_direction
 	
 	if direction == Vector2.ZERO:
@@ -51,11 +51,11 @@ func setDirection(_new_direction: Vector2) -> bool:
 
 	return true
 	
-func updateAnimation(state: String) -> void:
-	animation_player.play(state + "_" + animDirection())
+func update_animation(state: String) -> void:
+	animation_player.play(state + "_" + anim_direction())
 	pass
  
-func animDirection() -> String:
+func anim_direction() -> String:
 	if cardinal_direction == Vector2.DOWN:
 		return "down"
 	elif cardinal_direction == Vector2.UP:

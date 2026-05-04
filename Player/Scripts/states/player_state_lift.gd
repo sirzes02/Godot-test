@@ -7,7 +7,7 @@ class_name State_Lift extends State
 var start_animation_late: bool = false
 
 func enter() -> void:
-	player.updateAnimation("lift")
+	player.update_animation("lift")
 	
 	if start_animation_late:
 		player.animation_player.seek(0.2)

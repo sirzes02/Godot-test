@@ -28,7 +28,7 @@ func enter() -> void:
 	pathfinder = PATHFINDER.instantiate()
 	enemy.add_child(pathfinder)
 	_timer = state_aggro_duration
-	enemy.updateAnimation(anim_name)
+	enemy.update_animation(anim_name)
 	
 	if attack_area:
 		attack_area.monitoring = true
@@ -50,8 +50,8 @@ func process(_delta: float) -> EnemyState:
 	_direction = lerp(_direction, pathfinder.best_path, turn_rate)
 	enemy.velocity = _direction * chase_speed
 	
-	if enemy.setDirection(_direction):
-		enemy.updateAnimation(anim_name)
+	if enemy.set_direction(_direction):
+		enemy.update_animation(anim_name)
 	
 	if !_can_see_player:
 		_timer -= _delta

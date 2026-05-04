@@ -13,7 +13,7 @@ func init() -> void:
 	pass
 
 func enter() -> void:
-	player.updateAnimation("carry")
+	player.update_animation("carry")
 	walking = false
 	pass
 	
@@ -39,9 +39,9 @@ func exit() -> void:
 func process(_delta: float) -> State:
 	if player.direction == Vector2.ZERO:
 		walking = false
-		player.updateAnimation("carry")
-	elif player.setDirection() or not walking:
-		player.updateAnimation("carry_walk")
+		player.update_animation("carry")
+	elif player.set_direction() or not walking:
+		player.update_animation("carry_walk")
 		walking = true
 	
 	player.velocity = player.direction * move_speed
